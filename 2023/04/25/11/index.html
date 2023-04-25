@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"skytravelar.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="课程要求的15道oj题目及其分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法分析与设计">
+<meta property="og:url" content="https://skytravelar.github.io/2023/04/25/11/index.html">
+<meta property="og:site_name" content="賦幸の個人ブログ">
+<meta property="og:description" content="课程要求的15道oj题目及其分析">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/pic/73.png">
+<meta property="article:published_time" content="2023-04-25T07:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-25T06:53:23.362Z">
+<meta property="article:author" content="赋 倖">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/pic/73.png">
+
+<link rel="canonical" href="https://skytravelar.github.io/2023/04/25/11/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>算法分析与设计 | 賦幸の個人ブログ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">賦幸の個人ブログ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2023/04/25/11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="赋 倖">
+      <meta itemprop="description" content="东京之北 千叶逢春 好景如水彩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="賦幸の個人ブログ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          算法分析与设计
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-04-25 15:00:00 / 修改时间：14:53:23" itemprop="dateCreated datePublished" datetime="2023-04-25T15:00:00+08:00">2023-04-25</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <div class="post-description">课程要求的15道oj题目及其分析</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-P1302-可见矩形"><a href="#1-P1302-可见矩形" class="headerlink" title="1 P1302 可见矩形"></a>1 P1302 可见矩形</h1><h2 id="问题来源及登录账号"><a href="#问题来源及登录账号" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P1302</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定平面上 n 个互不相交（指公共面积为零）的正方形，它们的顶点坐标均为整数。设坐标原点为 O(0,0)。对于任一正方形 R，如果可以找到 R 的边上 2 个不同的点 A 和 B，使  三角形OAB 的内部与其他正方形无公共点，则称正方形 R 是从 O 点可见的正方形。</p>
+<p>对于给定的 n 个互不相交的正方形，计算从坐标原点 O 可见的正方形个数。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入文件的第一行是正方形个数n（1≤n≤10001≤n≤1000）</p>
+<p>接下来n行中，每行有三个表示正方形的整数 X,Y,L。其中，X 和 Y 表示正方形的左下角顶点坐标，L表示边长，1≤X,Y,Z≤10000。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出文件仅有一行包含一个整数，表示从坐标原点 O 可见的正方形个数。</p>
+<h3 id="样例-1"><a href="#样例-1" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">2 6 4</span><br><span class="line">1 4 1</span><br><span class="line">2 4 1</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计"><a href="#问题分析与算法设计" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>​		设正方形的左下端点（aa，bb），边长为cc，参数cmp&#x3D;aa+bb+cc。不难发现，cmp较小的正方形可以遮挡cmp较大的正方形，于是记录每个正方形的斜率范围。即最小斜率bb&#x2F;(aa+cc)和最大斜率(bb+cc)&#x2F;aa，并针对cmp参数进行递增排序</p>
+<p>​		建立二维数组a负责储存不可用的斜率范围，a数组奇数编号储存起始斜率，偶数编号储存截止斜率。于是便可用数组a表示所有不可用范围。初始的斜率范围即为k[1].s到k[1].l，下面依次使各正方形的斜率进入数组。</p>
+<p>​		第i号正方形进入数组：比k[i].s还小的元素直接照抄，不需更改，直到找到第一个大于等于k[i].s的元素。若该元素编号为奇数，即为一个范围的起始位置，说明k[i].s的进入产生了一个新的不可用范围，直接使k[i].s进入数组。若该元素编号为偶数，即为一个范围的结束位置，说明k[i].s处在某个范围内部，不需要产生新的起始点，不进行操作，继续向下查找元素。处在k[i].s和k[i].l之间的元素无需理会，直到找到第一个大于等于k[i].l的元素，对k[i].l的操作跟k[i].s基本相同。</p>
+<h3 id="算法代码"><a href="#算法代码" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n;</span><br><span class="line">int ans;</span><br><span class="line">struct node&#123;</span><br><span class="line">	double l,s,cmp;</span><br><span class="line">&#125;k[100100];</span><br><span class="line">bool cmp(node x,node y)&#123;</span><br><span class="line">	return x.cmp&lt;y.cmp;</span><br><span class="line">&#125;</span><br><span class="line">double a[10001][10001];</span><br><span class="line">int cnt[10001];</span><br><span class="line">inline int read()&#123;</span><br><span class="line">	int x=0,f=1;</span><br><span class="line">	char c=getchar();</span><br><span class="line">	while(c&gt;&#x27;9&#x27;||c&lt;&#x27;0&#x27;)&#123;</span><br><span class="line">		if(c==&#x27;-&#x27;) f=-1;</span><br><span class="line">		c=getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	while(c&gt;=&#x27;0&#x27;&amp;&amp;c&lt;=&#x27;9&#x27;)&#123;</span><br><span class="line">		x=(x&lt;&lt;3)+(x&lt;&lt;1)+(c^48);</span><br><span class="line">		c=getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	return x*f;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	n=read();</span><br><span class="line">	int aa,bb,cc;</span><br><span class="line">	for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">		aa=read();</span><br><span class="line">		bb=read();</span><br><span class="line">		cc=read();</span><br><span class="line">		k[i].l=(bb+cc)*1.0/aa;</span><br><span class="line">		k[i].s=bb*1.0/(aa+cc);</span><br><span class="line">		k[i].cmp=aa+bb+cc;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(k+1,k+1+n,cmp);</span><br><span class="line">	a[1][1]=k[1].s;</span><br><span class="line">	a[1][2]=k[1].l;</span><br><span class="line">	cnt[1]=2;</span><br><span class="line">	for(int i=2;i&lt;=n;i++)&#123;</span><br><span class="line">		int t=1;</span><br><span class="line">		while(a[i-1][t]&lt;k[i].s&amp;&amp;t&lt;=cnt[i-1])&#123;</span><br><span class="line">			a[i][t]=a[i-1][t];</span><br><span class="line">			t++;</span><br><span class="line">		&#125;</span><br><span class="line">		int l=t;</span><br><span class="line">		cnt[i]=t-1;</span><br><span class="line">		if(t%2==1)&#123;</span><br><span class="line">			a[i][++cnt[i]]=k[i].s;</span><br><span class="line">			if(a[i-1][t]==a[i][t]) l=t+1;</span><br><span class="line">		&#125; </span><br><span class="line">		while(a[i-1][t]&lt;=k[i].l&amp;&amp;t&lt;=cnt[i-1])&#123;</span><br><span class="line">			t++;</span><br><span class="line">		&#125;</span><br><span class="line">		int r=t;</span><br><span class="line">		if(t%2==1)&#123;</span><br><span class="line">			a[i][++cnt[i]]=k[i].l;</span><br><span class="line">			if(a[i-1][t-1]==a[i][cnt[i]]) r--;</span><br><span class="line">		&#125; </span><br><span class="line">		while(t&lt;=cnt[i-1])&#123;</span><br><span class="line">			a[i][++cnt[i]]=a[i-1][t]; </span><br><span class="line">			t++;</span><br><span class="line">		&#125;</span><br><span class="line">		if(r-l&gt;=1) ans++;</span><br><span class="line">		else&#123;</span><br><span class="line">			if(r%2==1) ans++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;ans+1;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论"><a href="#总结与讨论" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>算法的时间复杂度比较高。</p>
+<h1 id="2-P1784-数独"><a href="#2-P1784-数独" class="headerlink" title="2 P1784 数独"></a>2 P1784 数独</h1><h2 id="问题来源及登录账号-1"><a href="#问题来源及登录账号-1" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P1784</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>数独是根据 $9 \times 9$ 盘面上的已知数字，推理出所有剩余空格的数字，并满足每一行、每一列、每一个粗线宫内的数字均含 $1 - 9$ ，不重复。每一道合格的数独谜题都有且仅有唯一答案，推理方法也以此为基础，任何无解或多解的题目都是不合格的。</p>
+<p>芬兰一位数学家号称设计出全球最难的“数独游戏”，并刊登在报纸上，让大家去挑战。</p>
+<p>这位数学家说，他相信只有“智慧最顶尖”的人才有可能破解这个“数独之谜”。</p>
+<p>据介绍，目前数独游戏的难度的等级有一到五级，一是入门等级，五则比较难。不过这位数学家说，他所设计的数独游戏难度等级是十一，可以说是所以数独游戏中，难度最高的等级。他还表示，他目前还没遇到解不出来的数独游戏，因此他认为“最具挑战性”的数独游戏并没有出现。</p>
+<h3 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h3><p>一个未填的数独。</p>
+<h3 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h3><p>填好的数独。</p>
+<h3 id="样例-1-1"><a href="#样例-1-1" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-1"><a href="#样例输入-1-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">8 0 0 0 0 0 0 0 0 </span><br><span class="line">0 0 3 6 0 0 0 0 0 </span><br><span class="line">0 7 0 0 9 0 2 0 0 </span><br><span class="line">0 5 0 0 0 7 0 0 0 </span><br><span class="line">0 0 0 0 4 5 7 0 0 </span><br><span class="line">0 0 0 1 0 0 0 3 0 </span><br><span class="line">0 0 1 0 0 0 0 6 8 </span><br><span class="line">0 0 8 5 0 0 0 1 0 </span><br><span class="line">0 9 0 0 0 0 4 0 0</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-1"><a href="#样例输出-1-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">8 1 2 7 5 3 6 4 9 </span><br><span class="line">9 4 3 6 8 2 1 7 5 </span><br><span class="line">6 7 5 4 9 1 2 8 3 </span><br><span class="line">1 5 4 2 3 7 8 9 6 </span><br><span class="line">3 6 9 8 4 5 7 2 1 </span><br><span class="line">2 8 7 1 6 9 5 3 4 </span><br><span class="line">5 2 1 9 7 4 3 6 8 </span><br><span class="line">4 3 8 5 2 6 9 1 7 </span><br><span class="line">7 9 6 3 1 8 4 5 2</span><br></pre></td></tr></table></figure>
+
+<h3 id="样例-2"><a href="#样例-2" class="headerlink" title="样例 #2"></a>样例 #2</h3><h4 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入 #2"></a>样例输入 #2</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">9 0 0 8 0 0 0 0 0</span><br><span class="line">0 0 0 0 0 0 5 0 0 </span><br><span class="line">0 0 0 0 0 0 0 0 0 </span><br><span class="line">0 2 0 0 1 0 0 0 3</span><br><span class="line">0 1 0 0 0 0 0 6 0</span><br><span class="line">0 0 0 4 0 0 0 7 0</span><br><span class="line">7 0 8 6 0 0 0 0 0 </span><br><span class="line">0 0 0 0 3 0 1 0 0 </span><br><span class="line">4 0 0 0 0 0 2 0 0 </span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出 #2"></a>样例输出 #2</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">9 7 2 8 5 3 6 1 4 </span><br><span class="line">1 4 6 2 7 9 5 3 8 </span><br><span class="line">5 8 3 1 4 6 7 2 9 </span><br><span class="line">6 2 4 7 1 8 9 5 3 </span><br><span class="line">8 1 7 3 9 5 4 6 2 </span><br><span class="line">3 5 9 4 6 2 8 7 1 </span><br><span class="line">7 9 8 6 2 1 3 4 5 </span><br><span class="line">2 6 5 9 3 4 1 8 7 </span><br><span class="line">4 3 1 5 8 7 2 9 6 </span><br></pre></td></tr></table></figure>
+
+<h2 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-1"><a href="#问题分析与算法设计-1" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>​		数独是源自18世纪瑞士的一种数学游戏。是一种运用纸、笔进行演算的逻辑游戏。玩家需要根据9×9盘面上的已知数字，推理出所有剩余空格的数字，并满足每一行、每一列、每一个粗线宫（3×3）内的数字均含1-9，不重复。</p>
+<p>​		数独要求每一行、每一列、每一个3×3方阵内的数字，不重复。行和列重复判断是相当简单的。我们可以定义两个bool型二维数组，当此行（或列）填充数字时，我们可以直接把这行的这个数字打上true表示有数字了。</p>
+<h3 id="算法代码-1"><a href="#算法代码-1" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int sd[11][11];//数独方阵定义 </span><br><span class="line">bool p[11][11],l[11][11],fz[11][11];//行，列，方阵。 </span><br><span class="line"></span><br><span class="line">void _out()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">	for(int i=1;i&lt;=9;i++)</span><br><span class="line">	&#123;	</span><br><span class="line">  		for(int j=1;j&lt;=9;j++)</span><br><span class="line">			cout&lt;&lt;sd[i][j]&lt;&lt;&quot; &quot;;</span><br><span class="line">		cout&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	exit(0); </span><br><span class="line">&#125;</span><br><span class="line">void dfs(int x,int y)</span><br><span class="line">&#123;</span><br><span class="line">	if(sd[x][y]!=0)//如果原来这个位置有数字，跳过。 </span><br><span class="line">		if(x==9&amp;&amp;y==9)_out();//当行列都为9，填充完成，输出</span><br><span class="line">		else if(y==9)dfs(x+1,1);//当列数为9，搜索下一排。 </span><br><span class="line">		else dfs(x,y+1);//搜下一列 </span><br><span class="line">	else//原来的地方没有数字，准备填充！ </span><br><span class="line">		for(int i=1;i&lt;=9;i++)</span><br><span class="line">			if((!p[x][i])&amp;&amp;(!l[y][i])&amp;&amp;(!fz[(x-1)/3*3+(y-1)/3+1][i]))</span><br><span class="line">			//判断是不是重复了。</span><br><span class="line">			&#123;</span><br><span class="line">				sd[x][y]=i;//填充！ </span><br><span class="line">				p[x][i]=l[y][i]=fz[(x-1)/3*3+(y-1)/3+1][i]=true;//打上标记。 </span><br><span class="line">				if(x==9&amp;&amp;y==9)_out();//全部填完！输出</span><br><span class="line">				else if(y==9)dfs(x+1,1);//同上！搜下一行。</span><br><span class="line">				else dfs(x,y+1);//搜下一列！ </span><br><span class="line">				sd[x][y]=0; //恢复标记。 </span><br><span class="line">				p[x][i]=l[y][i]=fz[(x-1)/3*3+(y-1)/3+1][i]=false;//恢复标记。 </span><br><span class="line">			&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=1;i&lt;=9;i++)</span><br><span class="line">		for(int j=1;j&lt;=9;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			int t;//定义tmp（防止下面代码太长？） </span><br><span class="line">			cin&gt;&gt;t;//输入 </span><br><span class="line">			if(t!=0)</span><br><span class="line">				p[i][t]=l[j][t]=fz[(i-1)/3*3+(j-1)/3+1][t]=true;</span><br><span class="line">			//填充的不是0的话，表示原来有数字了。打上标记。	</span><br><span class="line">			sd[i][j]=t;//填充进数独。 </span><br><span class="line">		&#125;	</span><br><span class="line">	dfs(1,1);//搜索</span><br><span class="line">	return 0;//结束 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-1"><a href="#总结与讨论-1" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		算法的难点在于判断数字的重复。</p>
+<h1 id="3-P1229-遍历问题"><a href="#3-P1229-遍历问题" class="headerlink" title="3 P1229 遍历问题"></a>3 P1229 遍历问题</h1><h2 id="问题来源及登录账号-2"><a href="#问题来源及登录账号-2" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P1229</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h2><p>我们都很熟悉二叉树的前序、中序、后序遍历，在数据结构中常提出这样的问题：已知一棵二叉树的前序和中序遍历，求它的后序遍历，相应的，已知一棵二叉树的后序遍历和中序遍历序列你也能求出它的前序遍历。然而给定一棵二叉树的前序和后序遍历，你却不能确定其中序遍历序列，考虑如下图中的几棵二叉树：</p>
+<p> <img src="https://cdn.luogu.com.cn/upload/pic/73.png"> </p>
+<p>所有这些二叉树都有着相同的前序遍历和后序遍历，但中序遍历却不相同。</p>
+<h3 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h3><p>输A数据共两行，第一行表示该二叉树的前序遍历结果s1，第二行表示该二叉树的后序遍历结果s2。</p>
+<h3 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出可能的中序遍历序列的总数，结果不超过长整型数。</p>
+<h3 id="样例-1-2"><a href="#样例-1-2" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-2"><a href="#样例输入-1-2" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">abc                           </span><br><span class="line">cba</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-2"><a href="#样例输出-1-2" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+
+<h2 id="算法-2"><a href="#算法-2" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-2"><a href="#问题分析与算法设计-2" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>​		给定中能确定树的具体结构，是因为可以确定是左子树还是右子树，而之给定前和后，则不能确定，这就是会出现不同树结构的原因。只有前和后那么主要问题就是没有办法处理只有一个子树的情况，因为这种情况不知道子树究竟是这个节点的左子树还是右子树，也就是说其实这道题要判断遍历中存在着多少个只有一棵子树的情况。对于前，如果一个结点的下个结点等于后中对应结点的前一个结点的话，那么这个结点就是根节点且其只有一个子树。sum初始化为1，出现一个只有一棵子树的情况，就把sum*2。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    int i;</span><br><span class="line">    long long c=1;</span><br><span class="line">    string s1,s2,s3;</span><br><span class="line">    cin &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">    for (i=0; i&lt;s1.length()-1; i++) &#123;</span><br><span class="line">        s3 = s1.substr(i,2); // 截取相邻的两个字符串</span><br><span class="line">        reverse(s3.begin(),s3.end()); // 反转</span><br><span class="line">        if (s2.find(s3) != string::npos) c *= 2; // 匹配成功则总数*2</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; c &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-2"><a href="#总结与讨论-2" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		乍一看很难，实则找规律。</p>
+<h1 id="4-P1387-最大正方形"><a href="#4-P1387-最大正方形" class="headerlink" title="4 P1387 最大正方形"></a>4 P1387 最大正方形</h1><h2 id="问题来源及登录账号-3"><a href="#问题来源及登录账号-3" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P1387</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个 n×mn×m的只包含 0和1的矩阵里找出一个不包含 0的最大正方形，输出边长。</p>
+<h3 id="输入格式-3"><a href="#输入格式-3" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入文件第一行为两个整数n,m(1≤n,m≤100)，接下来 n 行，每行 m 个数字，用空格隔开，0 或 1。</p>
+<h3 id="输出格式-3"><a href="#输出格式-3" class="headerlink" title="输出格式"></a>输出格式</h3><p>一个整数，最大正方形的边长。</p>
+<h3 id="样例-1-3"><a href="#样例-1-3" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-3"><a href="#样例输入-1-3" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 4</span><br><span class="line">0 1 1 1</span><br><span class="line">1 1 1 0</span><br><span class="line">0 1 1 0</span><br><span class="line">1 1 0 1</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-3"><a href="#样例输出-1-3" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<h2 id="算法-3"><a href="#算法-3" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-3"><a href="#问题分析与算法设计-3" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>暴力算法：枚举每一个点作为所选正方形的左上角的点，然后枚举正方形边长，逐一判断。</p>
+<h3 id="算法代码-2"><a href="#算法代码-2" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">bool f[202][202]=&#123;0&#125;,p;</span><br><span class="line">int n,m,i,j,k,x,y,ans=0;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  cin&gt;&gt;m;</span><br><span class="line">  cin&gt;&gt;n;</span><br><span class="line">  for (int i=0; i&lt;n; i++)</span><br><span class="line">    for (int j=0; j&lt;m; j++)</span><br><span class="line">      cin&gt;&gt;f[i][j];          </span><br><span class="line">  for (int i=0; i&lt;n; i++)</span><br><span class="line">    for (int j=0; j&lt;m; j++)</span><br><span class="line">      for (int k=min(n,m); k&gt;ans; k--)&#123;</span><br><span class="line">          p=1;</span><br><span class="line">          for (int x=i; x&lt;i+k; x++)&#123;</span><br><span class="line">              for (int y=j; y&lt;j+k; y++)&#123;</span><br><span class="line">                  if (!f[x][y])      </span><br><span class="line">                      &#123;</span><br><span class="line">                        p=0; </span><br><span class="line">                        break;   </span><br><span class="line">                      &#125;</span><br><span class="line">              &#125;</span><br><span class="line">              if (!p)&#123;</span><br><span class="line">              	break;</span><br><span class="line">              &#125;     </span><br><span class="line">            &#125;</span><br><span class="line">          if (p)&#123;</span><br><span class="line">              ans=k; </span><br><span class="line">              break;       </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">  cout&lt;&lt;ans&lt;&lt;endl;                </span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-3"><a href="#总结与讨论-3" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		时间复杂度略高，还需要改进。</p>
+<h1 id="5-P1123-取数游戏"><a href="#5-P1123-取数游戏" class="headerlink" title="5 P1123 取数游戏"></a>5 P1123 取数游戏</h1><h2 id="问题来源及登录账号-4"><a href="#问题来源及登录账号-4" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P1123</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h2><p>一个$N \times M$的由非负整数构成的数字矩阵，你需要在其中取出若干个数字，使得取出的任意两个数字不相邻（若一个数字在另外一个数字相邻$8$个格子中的一个即认为这两个数字相邻），求取出数字和最大是多少。</p>
+<h3 id="输入格式-4"><a href="#输入格式-4" class="headerlink" title="输入格式"></a>输入格式</h3><p>第1行有一个正整数$T$，表示了有$T$组数据。</p>
+<p>对于每一组数据，第一行有两个正整数$N$和$M$，表示了数字矩阵为$N$行$M$列。</p>
+<p>接下来$N$行，每行$M$个非负整数，描述了这个数字矩阵。</p>
+<h3 id="输出格式-4"><a href="#输出格式-4" class="headerlink" title="输出格式"></a>输出格式</h3><p>$T$行，每行一个非负整数，输出所求得的答案。</p>
+<h3 id="样例-1-4"><a href="#样例-1-4" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-4"><a href="#样例输入-1-4" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">4 4</span><br><span class="line">67 75 63 10</span><br><span class="line">29 29 92 14</span><br><span class="line">21 68 71 56</span><br><span class="line">8 67 91 25</span><br><span class="line">2 3</span><br><span class="line">87 70 85</span><br><span class="line">10 3 17</span><br><span class="line">3 3</span><br><span class="line">1 1 1</span><br><span class="line">1 99 1</span><br><span class="line">1 1 1</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-4"><a href="#样例输出-1-4" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">271</span><br><span class="line">172</span><br><span class="line">99</span><br></pre></td></tr></table></figure>
+
+<h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><p>对于第1组数据，取数方式如下：</p>
+<p>[67] 75 63 10</p>
+<p>29 29 [92] 14</p>
+<p>[21] 68 71 56</p>
+<p>8 67 [91] 25</p>
+<p>对于$20%$的数据，$N, M≤3$；</p>
+<p>对于$40%$的数据，$N,M≤4$；</p>
+<p>对于$60%$的数据，$N, M≤5$；</p>
+<p>对于$100%$的数据，$N, M≤6,T≤20$。</p>
+<h2 id="算法-4"><a href="#算法-4" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-4"><a href="#问题分析与算法设计-4" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>​		对于本题，如果使用贪心法，每次去最大值，那么可以发现有问题。因为每取一个数，相邻的数就不能再取，那么每次决策就会影响下次结果，从而导致贪心决策不能最优化。动态规划也是如此，在动态规划中，每一个分步决策不能影响后续结果，所以此算法也排除。</p>
+<p>​		根据数据范围，所以可以考虑暴力枚举，而对于一个图，以及一个变化的状态，深度优先搜索（dfs） 应该是一个比较适合的算法。<br>再考虑每个数的状态。显然，对于一个数，有取与不取两种状态，状态改变取决于周围取数的变化。我们用 mark[ i ][ j ] 记录点 ( i , j ) 附近有几个数，若 mark[i] [j] ! &#x3D; 0 就代表不能取这个数。</p>
+<h3 id="算法代码-3"><a href="#算法代码-3" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int d[8][2]=&#123;1,0,-1,0,0,1,0,-1,1,1,-1,1,1,-1,-1,-1&#125;;//方向数组用来控制搜索时的方向 </span><br><span class="line">int t,n,m,s[8][8],mark[8][8],ans,mx;</span><br><span class="line"></span><br><span class="line">void dfs(int x,int y)&#123;//搜索函数，表示搜索点(x,y) </span><br><span class="line">	if(y==m+1)&#123;//当y到边界时，搜索下一行 </span><br><span class="line">		dfs(x+1,1);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	if(x==n+1)&#123;//当x到边界时，搜索结束，刷新最大值 </span><br><span class="line">		mx=max(ans,mx);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	dfs(x,y+1);// 不取此数的情况 </span><br><span class="line">	</span><br><span class="line">	if(mark[x][y]==0)&#123; //取此数的情况（需保证此数周围没有取其他数，即mark[i][j]==0）</span><br><span class="line">		ans+=s[x][y];</span><br><span class="line">		for(int fx=0;fx&lt;8;++fx)&#123; //标记周围的数 </span><br><span class="line">			++mark[x+d[fx][0]][y+d[fx][1]];</span><br><span class="line">		&#125;</span><br><span class="line">		dfs(x,y+1);</span><br><span class="line">		for(int fx=0;fx&lt;8;++fx)&#123; //回溯 </span><br><span class="line">			--mark[x+d[fx][0]][y+d[fx][1]];</span><br><span class="line">		&#125;</span><br><span class="line">		ans-=s[x][y];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	cin&gt;&gt;t; </span><br><span class="line">	while(t--)&#123;</span><br><span class="line">		memset(s,0,sizeof(s));</span><br><span class="line">		memset(mark,0,sizeof(mark));//在做每个数据前都要初始化数组 </span><br><span class="line">		cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">		for(int i=1;i&lt;=n;++i)&#123;</span><br><span class="line">			for(int j=1;j&lt;=m;++j)&#123;</span><br><span class="line">				cin&gt;&gt;s[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		mx=0;</span><br><span class="line">		dfs(1,1);//从点(1,1)开始搜索 </span><br><span class="line">		cout&lt;&lt;mx&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-4"><a href="#总结与讨论-4" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		主要需要确定算法和考虑标记状态。</p>
+<h1 id="6-P1576-最小花费"><a href="#6-P1576-最小花费" class="headerlink" title="6 P1576 最小花费"></a>6 P1576 最小花费</h1><h2 id="问题来源及登录账号-5"><a href="#问题来源及登录账号-5" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P1576</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h2><p>在 $n$ 个人中，某些人的银行账号之间可以互相转账。这些人之间转账的手续费各不相同。给定这些人之间转账时需要从转账金额里扣除百分之几的手续费，请问 $A$ 最少需要多少钱使得转账后 $B$ 收到 $100$ 元。</p>
+<h3 id="输入格式-5"><a href="#输入格式-5" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行输入两个正整数 $n,m$，分别表示总人数和可以互相转账的人的对数。</p>
+<p>以下 $m$ 行每行输入三个正整数 $x,y,z$，表示标号为 $x$ 的人和标号为 $y$ 的人之间互相转账需要扣除 $z%$ 的手续费 $(z&lt;100)$。</p>
+<p>最后一行输入两个正整数 $A,B$。数据保证 $A$ 与 $B$ 之间可以直接或间接地转账。</p>
+<h3 id="输出格式-5"><a href="#输出格式-5" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出 $A$ 使得 $B$ 到账 $100$ 元最少需要的总费用。精确到小数点后 $8$ 位。</p>
+<h3 id="样例-1-5"><a href="#样例-1-5" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-5"><a href="#样例输入-1-5" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">3 3                                     </span><br><span class="line">1 2 1</span><br><span class="line">2 3 2</span><br><span class="line">1 3 3</span><br><span class="line">1 3</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-5"><a href="#样例输出-1-5" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">103.07153164</span><br></pre></td></tr></table></figure>
+
+<h4 id="提示-1"><a href="#提示-1" class="headerlink" title="提示"></a>提示</h4><p>$1\le n \le 2000,m\le 100000$。</p>
+<h2 id="算法-5"><a href="#算法-5" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-5"><a href="#问题分析与算法设计-5" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>​	将本题抽象化之后不难发现本题就是最短路径问题，可采用Dijkstra算法解决。最小花费就是把每个人看做一个点，每次转账看做一个边，把花费看做边权，并且要建双向边。 i，j互相转账就相当于节点i和j之间有一条权值为（1-z%）的边，求一条路径使路径上各边权值乘积最大。结果就是100&#x2F;max。 </p>
+<h3 id="算法代码-4"><a href="#算法代码-4" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int n,m,a,b;//意思如题意</span><br><span class="line">bool mark[2005];//记下该点有无被遍历过</span><br><span class="line">double d[2005];//B点到该点的费用</span><br><span class="line">vector &lt; pair &lt;int,int&gt; &gt; s[2005];//用可变数组来记两点之间能否到达和费用如何，相较于普通数组更加方便</span><br><span class="line">multiset &lt;pair &lt;int,int&gt; &gt; f;//multiset里用pair 是按前面的数排序</span><br><span class="line"></span><br><span class="line">void dij() &#123;</span><br><span class="line">	for(int i=1; i&lt;=n; i++) d[i]=1e9;//若B到达不了，则费用无限大</span><br><span class="line">	d[b]=100;//B到B，100元</span><br><span class="line">	f.insert(make_pair(d[b],b));</span><br><span class="line">	for(int i=1; i&lt;=n; i++) &#123;</span><br><span class="line">		while(!f.empty()&amp;&amp;mark[(*f.begin()).second]) f.erase(f.begin());//如果该点被遍历过则不要</span><br><span class="line">		int p=(*f.begin()).second;//遍历点</span><br><span class="line">		mark[p]=1;</span><br><span class="line">		for(int j=0; j&lt;s[p].size(); j++) &#123;</span><br><span class="line">			int h=s[p][j].second,z=s[p][j].first;//h为加入点</span><br><span class="line">			double mon=d[p]/(100-z)*100;//费用</span><br><span class="line">			if(mon&lt;d[h]) &#123;</span><br><span class="line">				d[h]=mon;</span><br><span class="line">				f.insert(make_pair(d[h],h));</span><br><span class="line">			&#125;//取最小，加入。</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;</span><br><span class="line">	cin&gt;&gt;m&gt;&gt;n;</span><br><span class="line">	for(int i=0; i&lt;m; i++) &#123;</span><br><span class="line">		int u,v,w;//u、v为点，w为费用</span><br><span class="line">		cin&gt;&gt;u&gt;&gt;v&gt;&gt;w;</span><br><span class="line">		s[u].push_back(make_pair(w,v));</span><br><span class="line">		s[v].push_back(make_pair(w,u));</span><br><span class="line">	&#125;</span><br><span class="line">	cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">	dij();</span><br><span class="line">	printf(&quot;%.8f&quot;,d[a]);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-5"><a href="#总结与讨论-5" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		本题可以借助数据结构，更加方便，如堆，优先队列，multiset。</p>
+<h1 id="7-P2141-NOIP2014-普及组-珠心算测验"><a href="#7-P2141-NOIP2014-普及组-珠心算测验" class="headerlink" title="7 P2141 [NOIP2014 普及组] 珠心算测验"></a>7 P2141 [NOIP2014 普及组] 珠心算测验</h1><h2 id="问题来源及登录账号-6"><a href="#问题来源及登录账号-6" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P2141</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目描述-6"><a href="#题目描述-6" class="headerlink" title="题目描述"></a>题目描述</h2><p>珠心算是一种通过在脑中模拟算盘变化来完成快速运算的一种计算技术。珠心算训练，既能够开发智力，又能够为日常生活带来很多便利，因而在很多学校得到普及。</p>
+<p>某学校的珠心算老师采用一种快速考察珠心算加法能力的测验方法。他随机生成一个正整数集合，集合中的数各不相同，然后要求学生回答：其中有多少个数，恰好等于集合中另外两个（不同的）数之和？</p>
+<p>最近老师出了一些测验题，请你帮忙求出答案。</p>
+<p>(本题目为 2014NOIP 普及 T1)</p>
+<h3 id="输入格式-6"><a href="#输入格式-6" class="headerlink" title="输入格式"></a>输入格式</h3><p>共两行，第一行包含一个整数 $n$，表示测试题中给出的正整数个数。</p>
+<p>第二行有 $n$ 个正整数，每两个正整数之间用一个空格隔开，表示测试题中给出的正整数。</p>
+<h3 id="输出格式-6"><a href="#输出格式-6" class="headerlink" title="输出格式"></a>输出格式</h3><p>一个整数，表示测验题答案。</p>
+<h3 id="样例-1-6"><a href="#样例-1-6" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-6"><a href="#样例输入-1-6" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">1 2 3 4</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-6"><a href="#样例输出-1-6" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<h4 id="提示-2"><a href="#提示-2" class="headerlink" title="提示"></a>提示</h4><p>【样例说明】</p>
+<p>由 $1+2&#x3D;3,1+3&#x3D;4$，故满足测试要求的答案为 $2$。  </p>
+<p>注意，加数和被加数必须是集合中的两个不同的数。</p>
+<p>【数据说明】</p>
+<p>对于 $100%$ 的数据，$3 \leq n \leq 100$，测验题给出的正整数大小不超过 $10,000$。</p>
+<h2 id="算法-6"><a href="#算法-6" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-6"><a href="#问题分析与算法设计-6" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>​		采用三个数组，一个存储数值，另外两个标记数值状态。其中一个存储输入数值的状态，另一个存储数值相加之和的状态。最后遍历两个数组即可。</p>
+<h3 id="算法代码-5"><a href="#算法代码-5" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int t[200005],g[200005];</span><br><span class="line">int n,a[105],ans;</span><br><span class="line">int main()&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    for (int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];//读入</span><br><span class="line">        g[a[i]]=1;//在集合中赋值为1</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i=1;i&lt;n;i++)&#123;//枚举</span><br><span class="line">        for (int j=i+1;j&lt;=n;j++)&#123;</span><br><span class="line">            t[a[i]+a[j]]++;//被加出来了</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i=1;i&lt;=200002;i++)&#123;</span><br><span class="line">        if (t[i]&gt;0&amp;&amp;g[i]) ans++;//判断是否满足，满足ans++</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-6"><a href="#总结与讨论-6" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		此题算法简单，暴力算法即可求解，倘若数据范围未给出或者指明很大，则另当别论。</p>
+<h1 id="8-P1004-NOIP2000-提高组-方格取数"><a href="#8-P1004-NOIP2000-提高组-方格取数" class="headerlink" title="8 P1004 [NOIP2000 提高组] 方格取数"></a>8 P1004 [NOIP2000 提高组] 方格取数</h1><h2 id="问题来源及登录账号-7"><a href="#问题来源及登录账号-7" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P1004</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目描述-7"><a href="#题目描述-7" class="headerlink" title="题目描述"></a>题目描述</h2><p>设有 $N \times N$ 的方格图 $(N \le 9)$，我们将其中的某些方格中填入正整数，而其他的方格中则放入数字 $0$。如下图所示（见样例）:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">A</span><br><span class="line"> 0  0  0  0  0  0  0  0</span><br><span class="line"> 0  0 13  0  0  6  0  0</span><br><span class="line"> 0  0  0  0  7  0  0  0</span><br><span class="line"> 0  0  0 14  0  0  0  0</span><br><span class="line"> 0 21  0  0  0  4  0  0</span><br><span class="line"> 0  0 15  0  0  0  0  0</span><br><span class="line"> 0 14  0  0  0  0  0  0</span><br><span class="line"> 0  0  0  0  0  0  0  0</span><br><span class="line">                         B</span><br></pre></td></tr></table></figure>
+<p>某人从图的左上角的 $A$ 点出发，可以向下行走，也可以向右走，直到到达右下角的 $B$ 点。在走过的路上，他可以取走方格中的数（取走后的方格中将变为数字 $0$）。<br>此人从 $A$ 点到 $B$ 点共走两次，试找出 $2$ 条这样的路径，使得取得的数之和为最大。</p>
+<h3 id="输入格式-7"><a href="#输入格式-7" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入的第一行为一个整数 $N$（表示 $N \times N$ 的方格图），接下来的每行有三个整数，前两个表示位置，第三个数为该位置上所放的数。一行单独的 $0$ 表示输入结束。</p>
+<h3 id="输出格式-7"><a href="#输出格式-7" class="headerlink" title="输出格式"></a>输出格式</h3><p>只需输出一个整数，表示 $2$ 条路径上取得的最大的和。</p>
+<h3 id="样例-1-7"><a href="#样例-1-7" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-7"><a href="#样例输入-1-7" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">8</span><br><span class="line">2 3 13</span><br><span class="line">2 6  6</span><br><span class="line">3 5  7</span><br><span class="line">4 4 14</span><br><span class="line">5 2 21</span><br><span class="line">5 6  4</span><br><span class="line">6 3 15</span><br><span class="line">7 2 14</span><br><span class="line">0 0  0</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-7"><a href="#样例输出-1-7" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">67</span><br></pre></td></tr></table></figure>
+
+<h4 id="提示-3"><a href="#提示-3" class="headerlink" title="提示"></a>提示</h4><p>NOIP 2000 提高组第四题</p>
+<h2 id="算法-7"><a href="#算法-7" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-7"><a href="#问题分析与算法设计-7" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>​		本题采用深度优先算法解决，并且采用四维dp。之所以不用二维dp，原因在于，局部最优解不是全局最优解。</p>
+<p>​		设dp[i] [j] [k] [l] 存放的是两个人同时分别走到i,j和k,l点时的最大路径和。易知，两个同时走的人均需遵守只能向下或向右的规则，那么两个人的选择2 x 2就一共有四种可能，即1.都往下走。2.一个往下，一个往右。3.一个往右，一个往下。4.都往右走。</p>
+<p>​		倘若某格子有人走过了，另一个人倘若也需要经过那个格子，只需在原算法基础上减掉那个格子的值即可，而无需考虑将其数值置零的问题。</p>
+<h3 id="算法代码-6"><a href="#算法代码-6" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int a[10][10];</span><br><span class="line">int dp[10][10][10][10];</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">	cin &gt;&gt; n;	</span><br><span class="line">	//输入数据</span><br><span class="line">	int x,y,num;</span><br><span class="line">	while (1)&#123;</span><br><span class="line">		cin &gt;&gt; x &gt;&gt; y &gt;&gt; num;</span><br><span class="line">		if ( !x &amp;&amp; !y &amp;&amp; !num )</span><br><span class="line">			break;</span><br><span class="line">		a[x][y] = num;</span><br><span class="line">	&#125;	</span><br><span class="line">	//四重循环</span><br><span class="line">	int i,j,k,l;</span><br><span class="line">	for ( i=1; i&lt;=n; ++i )</span><br><span class="line">		for ( j=1; j&lt;=n; ++j )</span><br><span class="line">			for ( k=1; k&lt;=n; ++k )</span><br><span class="line">				for ( l=1; l&lt;=n; ++l )&#123;</span><br><span class="line">					dp[i][j][k][l] = max ( max (max ( dp[i-1][j][k-1][l], dp[i-1][j][k][l-1] ), dp[i][j-1][k-1][l] ), dp[i][j-1][k][l-1] ) + a[i][j] + a[k][l];</span><br><span class="line">					//注意相同去重</span><br><span class="line">					if ( i==k &amp;&amp; j== l )</span><br><span class="line">						dp[i][j][k][l] -= a[k][l];</span><br><span class="line">				&#125;</span><br><span class="line">	cout &lt;&lt; dp[n][n][n][n] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-7"><a href="#总结与讨论-7" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		本题难点在于理解两次局部最优解和全局最优解的不同之处。对于四维dp理解不到位也很难写出该算法。</p>
+<h1 id="9-P1006-NOIP2008-提高组-传纸条"><a href="#9-P1006-NOIP2008-提高组-传纸条" class="headerlink" title="9 P1006 [NOIP2008 提高组] 传纸条"></a>9 P1006 [NOIP2008 提高组] 传纸条</h1><h2 id="问题来源及登录账号-8"><a href="#问题来源及登录账号-8" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P1006</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目描述-8"><a href="#题目描述-8" class="headerlink" title="题目描述"></a>题目描述</h2><p>小渊和小轩是好朋友也是同班同学，他们在一起总有谈不完的话题。一次素质拓展活动中，班上同学安排坐成一个 $m$ 行 $n$ 列的矩阵，而小渊和小轩被安排在矩阵对角线的两端，因此，他们就无法直接交谈了。幸运的是，他们可以通过传纸条来进行交流。纸条要经由许多同学传到对方手里，小渊坐在矩阵的左上角，坐标 $(1,1)$，小轩坐在矩阵的右下角，坐标 $(m,n)$。从小渊传到小轩的纸条只可以向下或者向右传递，从小轩传给小渊的纸条只可以向上或者向左传递。</p>
+<p>在活动进行中，小渊希望给小轩传递一张纸条，同时希望小轩给他回复。班里每个同学都可以帮他们传递，但只会帮他们一次，也就是说如果此人在小渊递给小轩纸条的时候帮忙，那么在小轩递给小渊的时候就不会再帮忙。反之亦然。</p>
+<p>还有一件事情需要注意，全班每个同学愿意帮忙的好感度有高有低（注意：小渊和小轩的好心程度没有定义，输入时用 $0$ 表示），可以用一个 $[0,100]$ 内的自然数来表示，数越大表示越好心。小渊和小轩希望尽可能找好心程度高的同学来帮忙传纸条，即找到来回两条传递路径，使得这两条路径上同学的好心程度之和最大。现在，请你帮助小渊和小轩找到这样的两条路径。</p>
+<h3 id="输入格式-8"><a href="#输入格式-8" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行有两个用空格隔开的整数 $m$ 和 $n$，表示班里有 $m$ 行 $n$ 列。</p>
+<p>接下来的 $m$ 行是一个 $m \times n$ 的矩阵，矩阵中第 $i$ 行 $j$ 列的整数表示坐在第 $i$ 行 $j$ 列的学生的好心程度。每行的 $n$ 个整数之间用空格隔开。</p>
+<h3 id="输出格式-8"><a href="#输出格式-8" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出文件共一行一个整数，表示来回两条路上参与传递纸条的学生的好心程度之和的最大值。</p>
+<h3 id="样例-1-8"><a href="#样例-1-8" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-8"><a href="#样例输入-1-8" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 3</span><br><span class="line">0 3 9</span><br><span class="line">2 8 5</span><br><span class="line">5 7 0</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-8"><a href="#样例输出-1-8" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">34</span><br></pre></td></tr></table></figure>
+
+<h4 id="提示-4"><a href="#提示-4" class="headerlink" title="提示"></a>提示</h4><p><strong>【数据范围】</strong></p>
+<p>对于 $30%$ 的数据，满足 $1 \le m,n \le 10$。<br>对于 $100%$ 的数据，满足 $1 \le m,n \le 50$。</p>
+<p><strong>【题目来源】</strong></p>
+<p>NOIP 2008 提高组第三题。</p>
+<h2 id="算法-8"><a href="#算法-8" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-8"><a href="#问题分析与算法设计-8" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>​		最好想的做法是四维dp，设f[i][j][k] [l]为从小渊传到小轩的纸条到达(i,j)，从小轩传给小渊的纸条到达(k,l)的路径上取得的最大的好心程度和。完全可以换一个思路想，即求从给定的起点出发走到指定位置的两条最短严格不相交路线。那么特别显然，转移方程是 f[i] [j] [k] [l]&#x3D;max( f[i][j-1][k-1] [l] , f[i-1] [j] [k] [l-1] , f[i] [j-1] [k] [l-1] , f[i-1] [j] [k-1] [l] )+a[i] [j]+a[k] [l]。要小心l的枚举范围，应该是从j+1到m，只有这样，在枚举第二条路的时候可以控制下标的l不会和j有相等的可能，这样可以保证两条路一定不相交。由于终点的值是0，所以目标状态就是f[n] [m-1] [n-1] [m]。如果你不想这样做，那就让l直接从1枚举，但需要加一个判断，判断当前的(i,j)和(k,l)是不是重合了，如果重合那就把f数组对应的这个地方在转移后减掉一个a[i] [j]或者a[k] [l]。</p>
+<h3 id="算法代码-7"><a href="#算法代码-7" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#define maxn 55</span><br><span class="line">using namespace std;</span><br><span class="line">int f[2 * maxn][maxn][maxn];</span><br><span class="line">int a[maxn][maxn];</span><br><span class="line">int n,m;</span><br><span class="line"> </span><br><span class="line">int max_ele(int a,int b,int c,int d)&#123;</span><br><span class="line">    if (b&gt;a)</span><br><span class="line">        a = b;</span><br><span class="line">    if (c&gt;a)</span><br><span class="line">        a = c;</span><br><span class="line">    if (d&gt;a)</span><br><span class="line">        a = d;</span><br><span class="line">    return a;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    for (int i=1;i&lt;=n;i++)</span><br><span class="line">        for (int j=1;j&lt;=m;j++)</span><br><span class="line">            cin &gt;&gt; a[i][j];</span><br><span class="line">    for (int k=1;k&lt;=n+m-1;k++)</span><br><span class="line">        for (int i=1;i&lt;=n;i++)</span><br><span class="line">            for (int j=1;j&lt;=n;j++)&#123;</span><br><span class="line">                if (k-i+1&lt;1 || k-j+1&lt;1) //这里是判断纵坐标的合法性，如果纵坐标不合法那就跳过去</span><br><span class="line">                    continue;</span><br><span class="line">                 f[k][i][j] = max_ele(f[k-1][i][j],f[k-1][i-1][j-1],f[k-1][i][j-1],f[k-1][i-1][j]) + a[i][k-i+1] + a[j][k-j+1];</span><br><span class="line">                if (i==j) //判断重合路径</span><br><span class="line">                    f[k][i][j]-=a[i][k-i+1];</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    cout &lt;&lt; f[n+m-1][n][n] &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-8"><a href="#总结与讨论-8" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		算法时间复杂度是O(n^2 * m^2)。</p>
+<h1 id="10-P1018-NOIP2000-提高组-乘积最大"><a href="#10-P1018-NOIP2000-提高组-乘积最大" class="headerlink" title="10 P1018 [NOIP2000 提高组] 乘积最大"></a>10 P1018 [NOIP2000 提高组] 乘积最大</h1><h2 id="问题来源及登录账号-9"><a href="#问题来源及登录账号-9" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P1018</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目描述-9"><a href="#题目描述-9" class="headerlink" title="题目描述"></a>题目描述</h2><p>今年是国际数学联盟确定的“ 2000 ――世界数学年”，又恰逢我国著名数学家华罗庚先生诞辰 90 周年。在华罗庚先生的家乡江苏金坛，组织了一场别开生面的数学智力竞赛的活动，你的一个好朋友 XZ 也有幸得以参加。活动中，主持人给所有参加活动的选手出了这样一道题目：</p>
+<p>设有一个长度为 $N$ 的数字串，要求选手使用 $K$ 个乘号将它分成 $K+1$ 个部分，找出一种分法，使得这 $K+1$ 个部分的乘积能够为最大。</p>
+<p>同时，为了帮助选手能够正确理解题意，主持人还举了如下的一个例子：</p>
+<p>有一个数字串：$312$， 当 $N&#x3D;3,K&#x3D;1$ 时会有以下两种分法：</p>
+<ol>
+<li>$3  \times  12&#x3D;36$ </li>
+<li>$31  \times   2&#x3D;62$</li>
+</ol>
+<p>这时，符合题目要求的结果是: $31  \times  2 &#x3D; 62$</p>
+<p>现在，请你帮助你的好朋友 XZ 设计一个程序，求得正确的答案。</p>
+<h3 id="输入格式-9"><a href="#输入格式-9" class="headerlink" title="输入格式"></a>输入格式</h3><p>程序的输入共有两行：</p>
+<p>第一行共有 $2$ 个自然数 $N,K$</p>
+<p>第二行是一个长度为 $N$ 的数字串。</p>
+<h3 id="输出格式-9"><a href="#输出格式-9" class="headerlink" title="输出格式"></a>输出格式</h3><p>结果显示在屏幕上，相对于输入，应输出所求得的最大乘积（一个自然数）。</p>
+<h3 id="样例-1-9"><a href="#样例-1-9" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-9"><a href="#样例输入-1-9" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4  2</span><br><span class="line">1231</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-9"><a href="#样例输出-1-9" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">62</span><br></pre></td></tr></table></figure>
+
+<h4 id="提示-5"><a href="#提示-5" class="headerlink" title="提示"></a>提示</h4><p><strong>数据范围与约定</strong></p>
+<p>对于 $60%$ 的测试数据满足 $6≤N≤20$。<br>对于所有测试数据，$6≤N≤40,1≤K≤6$。</p>
+<p>NOIp2000 提高组第二题</p>
+<h2 id="算法-9"><a href="#算法-9" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-9"><a href="#问题分析与算法设计-9" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>首先，这道题是显而易见的区间DP，那么，做这道题时，可以分为以下几步：<br>1.确定状态，一般是f[i] [j]之类的，一般题目问什么，就设什么，这道题的状态定义为：f[ i ] [ j ]表示在前i个数中放j个乘号所得到的最大值。把这个状态带回题目，发现f[n−1] [k]恰为所求。<br>2.确定阶段，这道题很显然是以乘号为阶段的，乘号具有明显的顺序性，即：先放完一个乘号，记录在DP数组中，放两个乘号是才能顺利调用之前的计算结果。<br>3.确定状态转移方程：f[i] [j] &#x3D; max(f[i] [j],f[i−1] [k−1]∗num(k,j))。<br>4.初始化，这道题肯定是要初始化的，即 f [i] [0]时（前i个数中放0个乘号所得到的最大值就是i本身）</p>
+<h3 id="算法代码-8"><a href="#算法代码-8" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line"></span><br><span class="line">#define INF 0x3f3f3f3f</span><br><span class="line">#define ll long long</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">string s;</span><br><span class="line">ll n,m,f[50][10];//f[i][j]:前i个数字放j个乘号</span><br><span class="line"></span><br><span class="line">ll js(ll x,ll y)//将字符串从x位到y位转换为一个数字</span><br><span class="line">&#123;</span><br><span class="line">	ll sum = 0;</span><br><span class="line">	for(int i = x;i &lt;= y;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		sum = sum * 10;</span><br><span class="line">		sum += s[i] - 48;</span><br><span class="line">	&#125;</span><br><span class="line">	return sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">	cin &gt;&gt; s;</span><br><span class="line">	for(int i = 0;i &lt; n;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		f[i][0] = js(0,i);//初始化</span><br><span class="line">	&#125;</span><br><span class="line">	for(int i = 1;i &lt;= m;++i)//放i个乘号</span><br><span class="line">	&#123;</span><br><span class="line">		for(int j = i;j &lt; n;++j)//在第j个位置放乘号，j不能=n，因为乘号必须要放在数字之间</span><br><span class="line">		&#123;</span><br><span class="line">			for(int k = i;k &lt;= j;++k)//分割线</span><br><span class="line">			&#123;</span><br><span class="line">				f[j][i] = max(f[j][i],f[k - 1][i - 1] * js(k,j));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	cout &lt;&lt; f[n - 1][m] &lt;&lt; endl; </span><br><span class="line">	return 0;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-9"><a href="#总结与讨论-9" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		或许暴力算法也能解决？</p>
+<h1 id="11-P1016-NOIP1999-提高组-旅行家的预算"><a href="#11-P1016-NOIP1999-提高组-旅行家的预算" class="headerlink" title="11 P1016 [NOIP1999 提高组] 旅行家的预算"></a>11 P1016 [NOIP1999 提高组] 旅行家的预算</h1><h2 id="问题来源及登录账号-10"><a href="#问题来源及登录账号-10" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P1016</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目描述-10"><a href="#题目描述-10" class="headerlink" title="题目描述"></a>题目描述</h2><p>一个旅行家想驾驶汽车以最少的费用从一个城市到另一个城市（假设出发时油箱是空的）。给定两个城市之间的距离 $D_1$、汽车油箱的容量 $C$（以升为单位）、每升汽油能行驶的距离 $D_2$、出发点每升汽油价格$P$和沿途油站数 $N$（$N$ 可以为零），油站 $i$ 离出发点的距离 $D_i$、每升汽油价格 $P_i$（$i&#x3D;1,2,…,N$）。计算结果四舍五入至小数点后两位。如果无法到达目的地，则输出 <code>No Solution</code>。</p>
+<h3 id="输入格式-10"><a href="#输入格式-10" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行，$D_1$，$C$，$D_2$，$P$，$N$。</p>
+<p>接下来有 $N$ 行。</p>
+<p>第 $i+1$ 行，两个数字，油站 $i$ 离出发点的距离 $D_i$ 和每升汽油价格 $P_i$。</p>
+<h3 id="输出格式-10"><a href="#输出格式-10" class="headerlink" title="输出格式"></a>输出格式</h3><p>所需最小费用，计算结果四舍五入至小数点后两位。如果无法到达目的地，则输出 <code>No Solution</code>。</p>
+<h3 id="样例-1-10"><a href="#样例-1-10" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-10"><a href="#样例输入-1-10" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">275.6 11.9 27.4 2.8 2</span><br><span class="line">102.0 2.9</span><br><span class="line">220.0 2.2</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-10"><a href="#样例输出-1-10" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">26.95</span><br></pre></td></tr></table></figure>
+
+<h4 id="提示-6"><a href="#提示-6" class="headerlink" title="提示"></a>提示</h4><p>$N \le 6$，其余数字$ \le 500$。</p>
+<h2 id="算法-10"><a href="#算法-10" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-10"><a href="#问题分析与算法设计-10" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>首先做如下定义：加油站距离数组dis[n+2], 汽油价格数组pri[n+2], 两者一一对应。</p>
+<p>接着对这两个数组初始化，dis[0] &#x3D; 0; pri[0] &#x3D; p; &#x2F;&#x2F; 将出发点的距离 0 和 油价p 放入数组</p>
+<p>　　　　　　　　　　　　　　dis[n+1] &#x3D; d1; pri[n+1] &#x3D; 0; &#x2F;&#x2F; 终点的距离 d1, 油价 0 放入数组</p>
+<p>将之后输入的N行数据按照距离从小到大排列，需要注意的是，交换距离的时候需要将对应的价格也交换。</p>
+<p>那么只需要从距离最小的点开始出发，依次进行计算。</p>
+<h3 id="算法代码-9"><a href="#算法代码-9" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line">typedef struct</span><br><span class="line">&#123;</span><br><span class="line">    double dis;</span><br><span class="line">    double price;</span><br><span class="line">&#125;station;</span><br><span class="line">int wrong=99999;</span><br><span class="line">station st[100000];</span><br><span class="line">double d1,c,d2,p;</span><br><span class="line">int n;</span><br><span class="line">int now;//当前所在位置</span><br><span class="line">int t;</span><br><span class="line">double maxn;//最远走到哪里</span><br><span class="line"></span><br><span class="line">double res;//剩余；</span><br><span class="line">double price_sum=0;//总价钱</span><br><span class="line">int cmp(station a,station b)</span><br><span class="line">&#123;</span><br><span class="line">    return a.dis&lt;b.dis;</span><br><span class="line">&#125;</span><br><span class="line">int func(int now)</span><br><span class="line">&#123;</span><br><span class="line">    int index=wrong;//next</span><br><span class="line">    for(int i=now+1;i&lt;=n&amp;&amp;st[i].dis-st[now].dis&lt;=maxn;i++)//找能到的加油站</span><br><span class="line">    &#123;</span><br><span class="line">        if(st[i].price&lt;st[now].price)//能到&amp;&amp;便宜</span><br><span class="line">        &#123;</span><br><span class="line">            price_sum+=(st[i].dis-st[now].dis)/d2*st[now].price;</span><br><span class="line">            res=0;</span><br><span class="line">            return i;</span><br><span class="line">        &#125;</span><br><span class="line">        if(index==wrong||st[i].price&lt;st[index].price)</span><br><span class="line">            index=i;//能到，不便宜</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    if(d1-st[now].dis&lt;=maxn)//没有更便宜的，且能到终点了</span><br><span class="line">    &#123;</span><br><span class="line">        price_sum+=(d1-st[now].dis-res)/d2*st[now].price;</span><br><span class="line">        return wrong;</span><br><span class="line">    &#125;</span><br><span class="line">    if(index==wrong)</span><br><span class="line">    &#123;</span><br><span class="line">        //到不了下个站</span><br><span class="line">        cout&lt;&lt;&quot;No Solution&quot;&lt;&lt;endl;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    else//没有更便宜的，又不能一次到终点</span><br><span class="line">    &#123;</span><br><span class="line">        price_sum+=c*st[now].price;</span><br><span class="line">        res+=(maxn-(st[index].dis-st[now].dis));</span><br><span class="line">        return index;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    cin&gt;&gt;d1&gt;&gt;c&gt;&gt;d2&gt;&gt;p&gt;&gt;n;</span><br><span class="line"></span><br><span class="line">    st[0].dis=0;</span><br><span class="line">    st[0].price=p;</span><br><span class="line">    for(int i=1;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;st[i].dis&gt;&gt;st[i].price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sort(st,st+n+1,cmp);</span><br><span class="line">    now=0;</span><br><span class="line">    maxn=c*d2;</span><br><span class="line"></span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">        t=func(now);</span><br><span class="line">        now=t;</span><br><span class="line">        if(t==-1)</span><br><span class="line">            return 0;</span><br><span class="line">    &#125;while(t!=wrong);</span><br><span class="line"></span><br><span class="line">    cout&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt;price_sum&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-10"><a href="#总结与讨论-10" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		需要注意的地方：1、每次都需要判断是否能够到达下一个加油站，如果无法到达，则直接退出。</p>
+<p>　　　　　　　　		2、每次在当前能够走到的最远距离内进行判断，寻找是否有比当前油价更低的加油站。如果没有更低的，价格相等也可以。</p>
+<p>　　　　　　　　		3、由于最后一点 pir[n+1]  的油价为0，所以要对其特殊处理。</p>
+<h1 id="12-P2434-SDOI2005-区间"><a href="#12-P2434-SDOI2005-区间" class="headerlink" title="12 P2434 [SDOI2005]区间"></a>12 P2434 [SDOI2005]区间</h1><h2 id="问题来源及登录账号-11"><a href="#问题来源及登录账号-11" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P2434</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目描述-11"><a href="#题目描述-11" class="headerlink" title="题目描述"></a>题目描述</h2><p>现给定 $n$ 个闭区间 $[a_i, b_i]$（$1 \le i \le n$）。这些区间的并可以表示为一些不相交的闭区间的并。你的任务就是在这些表示方式中找出包含最少区间的方案。你的输出应该按照区间的升序排列。这里如果说两个区间 $[a, b]$ 和 $[c, d]$ 是按照升序排列的，那么我们有 $a \le b &lt; c \le d$。</p>
+<p>请写一个程序：</p>
+<p>读入这些区间；</p>
+<p>计算满足给定条件的不相交闭区间；</p>
+<p>把这些区间按照升序输出。</p>
+<h3 id="输入格式-11"><a href="#输入格式-11" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行包含一个整数 $n$（$3 \le n \le 50000$）为区间的数目。<br>以下 $n$ 行为对区间的描述，第 $i$ 行为对第 $i$ 个区间的描述，为两个整数 $a_i, b_i$（$1 \le a _ i \leq b _ i \le 1000000$），表示一个区间 $[a_i, b_i]$。</p>
+<h3 id="输出格式-11"><a href="#输出格式-11" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出计算出来的不相交的区间。每一行都是对一个区间的描述，包括两个用空格分开的整数，为区间的上下界。你应该把区间按照升序排序。</p>
+<h3 id="样例-1-11"><a href="#样例-1-11" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-11"><a href="#样例输入-1-11" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">5 6</span><br><span class="line">1 4</span><br><span class="line">10 10</span><br><span class="line">6 9</span><br><span class="line">8 10</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-11"><a href="#样例输出-1-11" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 4</span><br><span class="line">5 10</span><br></pre></td></tr></table></figure>
+
+<h4 id="提示-7"><a href="#提示-7" class="headerlink" title="提示"></a>提示</h4><p>对于 $100 %$ 的数据，$3 \le n \le 50000$，$1 \le a _ i \leq b _ i \le 1000000$。</p>
+<h2 id="算法-11"><a href="#算法-11" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-11"><a href="#问题分析与算法设计-11" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>​		将所有区间按左端点排序，然后将n个区间扫一遍，若能合并成一个大区间便合并， 并用l,r记录当前区间的左右端点，若不能合并（即q[i].l&gt;r），输出，并重置l,r</p>
+<h3 id="算法代码-10"><a href="#算法代码-10" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">#define N 50005</span><br><span class="line">using namespace std;</span><br><span class="line"> </span><br><span class="line">int n; </span><br><span class="line"> </span><br><span class="line">struct node</span><br><span class="line">&#123;</span><br><span class="line">    int l,r;</span><br><span class="line">&#125;q[N];</span><br><span class="line">bool cmp(node x,node y) &#123;return x.l&lt;y.l;&#125;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    for(int i=1;i&lt;=n;i++) scanf(&quot;%d%d&quot;,&amp;q[i].l,&amp;q[i].r);</span><br><span class="line">    sort(q+1,q+1+n,cmp);</span><br><span class="line">    int l=q[1].l,r=q[1].r;</span><br><span class="line">    for(int i=2;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(q[i].l&gt;r)</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;%d %d\n&quot;,l,r);</span><br><span class="line">            l=q[i].l;r=q[i].r;</span><br><span class="line">        &#125;</span><br><span class="line">        else r=max(r,q[i].r);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d %d&quot;,l,r);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-11"><a href="#总结与讨论-11" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		这题也可用线段树完成，先将每一段区间插入线段树，然后用两个指针l&#x3D;1,r&#x3D;1扫[l,r]，若区间[l,r]被覆盖，r++,若不是，重置l,r，并在 l !&#x3D;r时输出</p>
+<h1 id="13-P3842-TJOI2007-线段"><a href="#13-P3842-TJOI2007-线段" class="headerlink" title="13 P3842 [TJOI2007]线段"></a>13 P3842 [TJOI2007]线段</h1><h2 id="题目描述-12"><a href="#题目描述-12" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个 $n \times n$ 的平面上，在每一行中有一条线段，第 $i$ 行的线段的左端点是$(i, L_{i})$，右端点是$(i, R_{i})$。</p>
+<p>你从 $(1,1)$ 点出发，要求沿途走过所有的线段，最终到达 $(n,n)$ 点，且所走的路程长度要尽量短。</p>
+<p>更具体一些说，你在任何时候只能选择向下走一步（行数增加 $1$）、向左走一步（列数减少 $1$）或是向右走一步（列数增加 $1$）。当然，由于你不能向上行走，因此在从任何一行向下走到另一行的时候，你必须保证已经走完本行的那条线段。</p>
+<h3 id="输入格式-12"><a href="#输入格式-12" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行有一个整数 $n$。</p>
+<p>以下 $n$ 行，在第 $i$ 行（总第 $(i+1)$ 行）的两个整数表示 $L_i$ 和 $R_i$。</p>
+<h3 id="输出格式-12"><a href="#输出格式-12" class="headerlink" title="输出格式"></a>输出格式</h3><p>仅包含一个整数，你选择的最短路程的长度。</p>
+<h3 id="样例-1-12"><a href="#样例-1-12" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-12"><a href="#样例输入-1-12" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">6</span><br><span class="line">2 6</span><br><span class="line">3 4</span><br><span class="line">1 3</span><br><span class="line">1 2</span><br><span class="line">3 6</span><br><span class="line">4 5</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-12"><a href="#样例输出-1-12" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">24</span><br></pre></td></tr></table></figure>
+
+<h4 id="提示-8"><a href="#提示-8" class="headerlink" title="提示"></a>提示</h4><p>我们选择的路线是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(1, 1) (1, 6)</span><br><span class="line">(2, 6) (2, 3)</span><br><span class="line">(3, 3) (3, 1)</span><br><span class="line">(4, 1) (4, 2)</span><br><span class="line">(5, 2) (5, 6)</span><br><span class="line">(6, 6) (6, 4) (6, 6)</span><br></pre></td></tr></table></figure>
+<p>不难计算得到，路程的总长度是 $24$。 </p>
+<p>对于 $100%$ 的数据中，$n \le 2 \times 10^4$，$1 \le L_i \le R_i \le n$。</p>
+<h2 id="算法-12"><a href="#算法-12" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-12"><a href="#问题分析与算法设计-12" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>​		比较典型的DP，首先先想，每一层的最优肯定是由上一层限制的左端点或者右端点下来得到的，那么就可以有状态转移方程了。f[i] [0]表示走完第i行且停在第i行的左端点最少用的步数，f[i] [1]同理，停在右端点的最少步数。<br>​		那么转移就很简单了，走完当前行且停到左端点，那么一定是从右端点过来的，那么从上一行左端点转移的话就是f[i] [0]&#x3D;abs(上一行左端点的坐标-本行右端点的坐标+本行线段长度)</p>
+<h3 id="算法代码-11"><a href="#算法代码-11" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int n,hang,ans=0;</span><br><span class="line">int l[20005];</span><br><span class="line">int r[20005];</span><br><span class="line">int f[29999][3];//F[X][0] left max </span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line"> scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line"> for(int i=1;i&lt;=n;i++) scanf(&quot;%d%d&quot;,&amp;l[i],&amp;r[i]);</span><br><span class="line"> f[1][1]=r[1]-1;</span><br><span class="line"> f[1][0]=r[1]-1+r[1]-l[1];</span><br><span class="line"> for(int i=2;i&lt;=n;i++)&#123;</span><br><span class="line">   if(l[i-1]&gt;=r[i])&#123;</span><br><span class="line">      f[i][1]=min(r[i]-l[i]+r[i]-l[i]+f[i-1][0]+1+l[i-1]-r[i],r[i]-l[i]+r[i]-l[i]+f[i-1][1]+1+r[i-1]-r[i]);</span><br><span class="line">      f[i][0]=min(f[i-1][0]+1+l[i-1]-l[i],f[i-1][1]+1+r[i-1]-l[i]); </span><br><span class="line">      &#125;</span><br><span class="line">      else if(r[i-1]&lt;=l[i]) &#123;</span><br><span class="line">       f[i][0]=min(r[i]-l[i]+r[i]-l[i]+f[i-1][1]+1+l[i]-r[i-1],r[i]-l[i]+r[i]-l[i]+f[i-1][0]+1+l[i]-l[i-1]);</span><br><span class="line">       f[i][1]=min(f[i-1][1]+1+r[i]-r[i-1],f[i-1][0]+1+r[i]-l[i-1]);</span><br><span class="line">   &#125;</span><br><span class="line">   else if(l[i]&lt;=l[i-1]&amp;&amp;r[i]&gt;=r[i-1])&#123;</span><br><span class="line">    f[i][0]=min(r[i]-l[i]+f[i-1][1]+1+r[i]-r[i-1],r[i]-l[i]+r[i]-l[i]+f[i-1][0]+1+l[i-1]-l[i]);</span><br><span class="line">    f[i][1]=min(r[i]-l[i]+r[i]-l[i]+f[i-1][1]+1+r[i]-r[i-1],r[i]-l[i]+f[i-1][0]+1+l[i-1]-l[i]); </span><br><span class="line">   &#125;</span><br><span class="line">   else if(l[i]&gt;=l[i-1]&amp;&amp;r[i]&lt;=r[i-1])&#123;</span><br><span class="line">    f[i][0]=min(r[i]-l[i]+f[i-1][1]+1+r[i-1]-r[i],r[i]-l[i]+r[i]-l[i]+f[i-1][0]+1+l[i]-l[i-1]);</span><br><span class="line">    f[i][1]=min(r[i]-l[i]+r[i]-l[i]+f[i-1][1]+1+r[i-1]-r[i],r[i]-l[i]+f[i-1][0]+1+l[i]-l[i-1]);</span><br><span class="line">   &#125;</span><br><span class="line">   else if(l[i]&gt;=l[i-1]&amp;&amp;l[i]&lt;=r[i-1])&#123;</span><br><span class="line">    f[i][0]=min(r[i]-l[i]+f[i-1][1]+1+r[i]-r[i-1],r[i]-l[i]+r[i]-l[i]+f[i-1][0]+1+l[i]-l[i-1]);</span><br><span class="line">    f[i][1]=min(r[i-1]-l[i]+r[i]-l[i]+f[i-1][1]+1,f[i-1][0]+1+r[i]-l[i-1]); </span><br><span class="line">   &#125;</span><br><span class="line">   else if(r[i]&gt;=l[i-1]&amp;&amp;r[i]&lt;=r[i-1])&#123;</span><br><span class="line">    f[i][1]=min(r[i]-l[i]+r[i]-l[i]+f[i-1][1]+1+r[i-1]-r[i],r[i]-l[i]+l[i-1]-l[i]+f[i-1][0]+1);</span><br><span class="line">    f[i][0]=min(r[i]-l[i]+f[i-1][1]+1+r[i-1]-r[i],r[i]-l[i]+f[i-1][0]+1+r[i]-l[i-1]);</span><br><span class="line">   &#125; </span><br><span class="line"> &#125;</span><br><span class="line"> ans=min(f[n][0]+n-l[n],f[n][1]+n-r[n]);</span><br><span class="line"> cout&lt;&lt;ans;</span><br><span class="line"> return 0;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-12"><a href="#总结与讨论-12" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		贪心算法基本不可解。</p>
+<h1 id="14-P5414-YNOI2019-排序"><a href="#14-P5414-YNOI2019-排序" class="headerlink" title="14 P5414 [YNOI2019] 排序"></a>14 P5414 [YNOI2019] 排序</h1><h2 id="题目描述-13"><a href="#题目描述-13" class="headerlink" title="题目描述"></a>题目描述</h2><p>对于一个数列 ${7, 1, 2, 3}$ 进行排序，我们可以把 $7$ 从头移动到尾。但是这个操作的成本是 $7$，并不是最佳的。最佳的排序方式是将连续的 $1,2,3$ 移动到 $7$ 的前面。这样的话，总的操作成本就是 $1+2+3&#x3D;6$，比之前的成本 $7$ 要小。</p>
+<p>你的任务是，对于一个给定的数列，输出对这个数列进行排序的最小成本。</p>
+<h3 id="输入格式-13"><a href="#输入格式-13" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入文件名为sort.in。</p>
+<p>每个输入文件包含多组数据。</p>
+<p>输入文件的第一行，包含一个正整数 $T$，代表该输入文件中所含的数据组数。</p>
+<p>接下来是 $T$ 组数据，每组数据的格式如下：</p>
+<p>每组数据包含 $2$ 行；</p>
+<p>第一行包含一个正整数 $n$，代表数列中元素的个数，其中 $0 &lt; n \leq 10^2$；</p>
+<p>第二行包含 $n$ 个整数，两个数之间以一个空格隔开，代表数列中的元素 $k_i$，其中$-10^{7} \leq k_i \leq 10^{7}$。</p>
+<h3 id="输出格式-13"><a href="#输出格式-13" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出文件名为sort.out。</p>
+<p>输出文件包含 $T$ 行，分别对应 $T$ 组数据的答案，即对数列进行排序的最小成本。</p>
+<h3 id="样例-1-13"><a href="#样例-1-13" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-13"><a href="#样例输入-1-13" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">4</span><br><span class="line">7 1 2 3</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-13"><a href="#样例输出-1-13" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure>
+
+<h4 id="提示-9"><a href="#提示-9" class="headerlink" title="提示"></a>提示</h4><p>对于 $60%$ 的数据：$0 &lt; n \leq 60$，$-10^{7} \leq k_i \leq 10^{7}$</p>
+<p>对于 $80%$ 的数据：$0 &lt; n \leq 80$，$-10^{7} \leq k_i \leq 10^{7}$</p>
+<p>对于 $100%$ 的数据：$0 &lt; n ≤ 10^2$，$-10^{7} \leq k_i \leq 10^{7}$</p>
+<h2 id="算法-13"><a href="#算法-13" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-13"><a href="#问题分析与算法设计-13" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>​		这道题就是移动几个数字使得数列单调上升，每次移动可以移动到任意位置，花费就是移动数字的大小。看到这个题之后，我们可以得到 ：最优解不可能把同一个数字移动2次及以上。既然我们可以一次把它移到正确的位置上，那么这个数字就可以理解为直接被移走了。那么问题就变成了：删除几个数字，使得数列单调递增，所求的是移走数字的最小和。 使得删除的和最小，就意味着留下的和最大。那么问题就变成了：保留几个单调递增的数字，使得和最大。</p>
+<h3 id="算法代码-12"><a href="#算法代码-12" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N=205;</span><br><span class="line">int a[N],dp[N];</span><br><span class="line"></span><br><span class="line">int read()&#123;</span><br><span class="line">	int x=0; </span><br><span class="line">	char c=getchar();</span><br><span class="line">	while(c&lt;&#x27;0&#x27;||c&gt;&#x27;9&#x27;) </span><br><span class="line">		c=getchar();</span><br><span class="line">	while(&#x27;0&#x27;&lt;=c&amp;&amp;c&lt;=&#x27;9&#x27;)&#123; </span><br><span class="line">		x=(x&lt;&lt;3)+(x&lt;&lt;1)+(c^48); </span><br><span class="line">		c=getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	return x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	int i,j,n;</span><br><span class="line">	for(int T=read(),sum=0,ans=0;T;T--,sum=0,ans=0)&#123;</span><br><span class="line">		n=read(); </span><br><span class="line">		for(i=1;i&lt;=n;i++)&#123;</span><br><span class="line">			a[i]=read(),sum+=a[i];</span><br><span class="line">			for(j=1;j&lt;i;j++)</span><br><span class="line">				if(a[j]&lt;=a[i]&amp;&amp;dp[i]&lt;dp[j])</span><br><span class="line">					dp[i]=dp[j];</span><br><span class="line">			dp[i]+=a[i];</span><br><span class="line">		&#125;</span><br><span class="line">		for(i=1;i&lt;=n;i++)</span><br><span class="line">			ans=max(ans,dp[i]);</span><br><span class="line">		printf(&quot;%d\n&quot;,sum-ans);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-13"><a href="#总结与讨论-13" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		将问题转化之后其实并不是太难。</p>
+<h1 id="15-P2023-AHOI2009-维护序列"><a href="#15-P2023-AHOI2009-维护序列" class="headerlink" title="15 P2023 [AHOI2009] 维护序列"></a>15 P2023 [AHOI2009] 维护序列</h1><h2 id="问题来源及登录账号-12"><a href="#问题来源及登录账号-12" class="headerlink" title="问题来源及登录账号"></a>问题来源及登录账号</h2><ul>
+<li>问题来源：洛谷</li>
+<li>问题号：P2023</li>
+<li>登陆账号：SkyTravelar</li>
+</ul>
+<h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>老师交给小可可一个维护数列的任务，现在小可可希望你来帮他完成。</p>
+<h2 id="题目描述-14"><a href="#题目描述-14" class="headerlink" title="题目描述"></a>题目描述</h2><p>有一个长为 $n$ 的数列 ${a_n}$，有如下三种操作形式：</p>
+<ol>
+<li>格式 <code>1 t g c</code>，表示把所有满足 $t\le i\le g$ 的 $a_i$ 改为 $a_i\times c$ ;</li>
+<li>格式 <code>2 t g c</code> 表示把所有满足 $t\le i\le g$ 的 $a_i$ 改为 $a_i+c$ ;</li>
+<li>格式 <code>3 t g</code> 询问所有满足 $t\le i\le g$ 的 $a_i$ 的和，由于答案可能很大，你只需输出这个数模 $p$ 的值。</li>
+</ol>
+<h3 id="输入格式-14"><a href="#输入格式-14" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行两个整数 $n$ 和 $p$。</p>
+<p>第二行含有 $n$ 个非负整数，表示数列 ${a_i}$ 。</p>
+<p>第三行有一个整数 $m$，表示操作总数。</p>
+<p>从第四行开始每行描述一个操作，同一行相邻两数之间用一个空格隔开，每行开头和末尾没有多余空格。</p>
+<h3 id="输出格式-14"><a href="#输出格式-14" class="headerlink" title="输出格式"></a>输出格式</h3><p>对每个操作 3，按照它在输入中出现的顺序，依次输出<strong>一行一个整数</strong>表示询问结果。</p>
+<h3 id="样例-1-14"><a href="#样例-1-14" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-14"><a href="#样例输入-1-14" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">7 43</span><br><span class="line">1 2 3 4 5 6 7</span><br><span class="line">5</span><br><span class="line">1 2 5 5</span><br><span class="line">3 2 4</span><br><span class="line">2 3 7 9</span><br><span class="line">3 1 3</span><br><span class="line">3 4 7</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-14"><a href="#样例输出-1-14" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">35</span><br><span class="line">8</span><br></pre></td></tr></table></figure>
+
+<h4 id="提示-10"><a href="#提示-10" class="headerlink" title="提示"></a>提示</h4><h5 id="样例输入输出-1-解释"><a href="#样例输入输出-1-解释" class="headerlink" title="样例输入输出 1 解释"></a>样例输入输出 1 解释</h5><ul>
+<li>初始时数列为 ${1,2,3,4,5,6,7}$。</li>
+<li>经过第 $1$ 次操作后，数列为 ${1,10,15,20,25,6,7}$。</li>
+<li>对第 $2$ 次操作，和为 $10+15+20&#x3D;45$，模 $43$ 的结果是 $2$。</li>
+<li>经过第 $3$ 次操作后，数列为 ${1,10,24,29,34,15,16}$。</li>
+<li>对第 $4$ 次操作，和为 $1+10+24&#x3D;35$，模 $43$ 的结果是 $35$。</li>
+<li>对第 $5$ 次操作，和为 $29+34+15+16&#x3D;94$，模 $43$ 的结果是$8$。</li>
+</ul>
+<h5 id="数据规模与约定"><a href="#数据规模与约定" class="headerlink" title="数据规模与约定"></a>数据规模与约定</h5><p>测试数据规模如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th align="center">数据点编号</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+<th align="center">9,10</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$n&#x3D;$</td>
+<td align="center">$10$</td>
+<td align="center">$1000$</td>
+<td align="center">$1000$</td>
+<td align="center">$10000$</td>
+<td align="center">$60000$</td>
+<td align="center">$70000$</td>
+<td align="center">$80000$</td>
+<td align="center">$90000$</td>
+<td align="center">$100000$</td>
+</tr>
+<tr>
+<td align="center">$m&#x3D;$</td>
+<td align="center">$10$</td>
+<td align="center">$1000$</td>
+<td align="center">$1000$</td>
+<td align="center">$10000$</td>
+<td align="center">$60000$</td>
+<td align="center">$70000$</td>
+<td align="center">$80000$</td>
+<td align="center">$90000$</td>
+<td align="center">$100000$</td>
+</tr>
+</tbody></table>
+<p>对于全部的测试点，保证 $0 \leq p, a_i, c \leq 10^9$，$1 \leq t \leq g \leq n$。</p>
+<h2 id="算法-14"><a href="#算法-14" class="headerlink" title="算法"></a>算法</h2><h3 id="问题分析与算法设计-14"><a href="#问题分析与算法设计-14" class="headerlink" title="问题分析与算法设计"></a>问题分析与算法设计</h3><p>​		本题较之平常的线段树,会有一点不同.就是多了一个乘的操作.所以我们需要令一个优先级,即先乘后加.因为加无论什么时候加都没有关系,但是乘会对整个答案产生影响.于是乎,只要打两个标记.在乘的时候,加的标记也要乘上那个值.</p>
+<h3 id="算法代码-13"><a href="#算法代码-13" class="headerlink" title="算法代码"></a>算法代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int N=2e5+1;</span><br><span class="line">struct Node&#123;</span><br><span class="line">	ll l;</span><br><span class="line">	ll r;</span><br><span class="line">	ll k;</span><br><span class="line">	ll add;</span><br><span class="line">	ll mul;</span><br><span class="line">&#125;tree[N*4];</span><br><span class="line">ll n,m,Mod,pos;</span><br><span class="line">inline ll build_tree(ll value,ll l,ll r)&#123;</span><br><span class="line">	tree[value]=Node&#123;l,r,0,0,1&#125;;</span><br><span class="line">	if (l==r)&#123;</span><br><span class="line">		ll num;</span><br><span class="line">		scanf(&quot;%lld&quot;,&amp;num);</span><br><span class="line">		return tree[value].k=num%Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	ll mid=(l+r)&gt;&gt;1;</span><br><span class="line">	return tree[value].k=(build_tree(value*2,l,mid)+build_tree(value*2+1,mid+1,r))%Mod;</span><br><span class="line">&#125;</span><br><span class="line">inline void pushdown(ll value)&#123;</span><br><span class="line">	tree[value*2].add=(tree[value].add+tree[value*2].add*tree[value].mul)%Mod;</span><br><span class="line">	tree[value*2+1].add=(tree[value].add+tree[value*2+1].add*tree[value].mul)%Mod;</span><br><span class="line">	tree[value*2].mul=(tree[value].mul*tree[value*2].mul)%Mod;</span><br><span class="line">	tree[value*2+1].mul=(tree[value].mul*tree[value*2+1].mul)%Mod;</span><br><span class="line">	tree[value*2].k=(tree[value].mul*tree[value*2].k+tree[value].add*(tree[value*2].r-tree[value*2].l+1))%Mod;</span><br><span class="line">	tree[value*2+1].k=(tree[value].mul*tree[value*2+1].k+tree[value].add*(tree[value*2+1].r-tree[value*2+1].l+1))%Mod;</span><br><span class="line">	tree[value].add=0;</span><br><span class="line">	tree[value].mul=1;</span><br><span class="line">&#125;</span><br><span class="line">inline ll query(ll value,ll L,ll R)&#123;</span><br><span class="line">	pushdown(value);</span><br><span class="line">	if (tree[value].l&gt;=L&amp;&amp;tree[value].r&lt;=R)</span><br><span class="line">		return tree[value].k%Mod;</span><br><span class="line">	ll mid=(tree[value].l+tree[value].r)&gt;&gt;1;</span><br><span class="line">    return ((L&lt;=mid?query(value*2,L,R):0)+(R&gt;mid?query(value*2+1,L,R):0))%Mod;</span><br><span class="line">&#125;</span><br><span class="line">inline void updata(ll value,ll x,ll pos,ll L,ll R)&#123;</span><br><span class="line">	pushdown(value);</span><br><span class="line">	if (pos==1&amp;&amp;tree[value].l&gt;=L&amp;&amp;tree[value].r&lt;=R)&#123;</span><br><span class="line">		tree[value].mul=(tree[value].mul*x)%Mod;</span><br><span class="line">        tree[value].add=(tree[value].add*x)%Mod;</span><br><span class="line">        tree[value].k=(tree[value].k*tree[value].mul)%Mod;</span><br><span class="line">        return;</span><br><span class="line">	&#125;</span><br><span class="line">	if(pos==2&amp;&amp;tree[value].l&gt;=L&amp;&amp;tree[value].r&lt;=R)&#123;</span><br><span class="line">        tree[value].add=(tree[value].add+x)%Mod;</span><br><span class="line">        tree[value].k=(tree[value].k+tree[value].add*(tree[value].r-tree[value].l+1))%Mod;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    ll mid=(tree[value].l+tree[value].r)/2;</span><br><span class="line">    if(L&lt;=mid)</span><br><span class="line">        updata(value*2,x,pos,L,R);</span><br><span class="line">    if(R&gt;mid)</span><br><span class="line">        updata((value*2)+1,x,pos,L,R);</span><br><span class="line">    tree[value].k=(tree[value*2].k+tree[value*2+1].k)%Mod;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	scanf(&quot;%lld%lld&quot;,&amp;n,&amp;Mod);</span><br><span class="line">	build_tree(1,1,n);</span><br><span class="line">	cin&gt;&gt;m;</span><br><span class="line">	for (ll i=1;i&lt;=m;i++)&#123;</span><br><span class="line">		cin&gt;&gt;pos;</span><br><span class="line">		ll x,y;</span><br><span class="line">		cin&gt;&gt;x&gt;&gt;y; </span><br><span class="line">		if (pos!=3)&#123;</span><br><span class="line">			ll k;</span><br><span class="line">			cin&gt;&gt;k;</span><br><span class="line">			updata(1,k,pos,x,y);</span><br><span class="line">		&#125;</span><br><span class="line">		else if (pos==3)</span><br><span class="line">			printf(&quot;%lld\n&quot;,query(1,x,y));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结与讨论-14"><a href="#总结与讨论-14" class="headerlink" title="总结与讨论"></a>总结与讨论</h2><p>​		难</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/12/12/10/" rel="prev" title="对二十个数进行排序">
+      <i class="fa fa-chevron-left"></i> 对二十个数进行排序
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-P1302-%E5%8F%AF%E8%A7%81%E7%9F%A9%E5%BD%A2"><span class="nav-number">1.</span> <span class="nav-text">1 P1302 可见矩形</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7"><span class="nav-number">1.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.2.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.2.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.3.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81"><span class="nav-number">1.3.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA"><span class="nav-number">1.4.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-P1784-%E6%95%B0%E7%8B%AC"><span class="nav-number">2.</span> <span class="nav-text">2 P1784 数独</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7-1"><span class="nav-number">2.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">2.2.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-1"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-1"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-2"><span class="nav-number">2.2.4.</span> <span class="nav-text">样例 #2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-2"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">样例输入 #2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-2"><span class="nav-number">2.2.4.2.</span> <span class="nav-text">样例输出 #2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-1"><span class="nav-number">2.3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-1"><span class="nav-number">2.4.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-P1229-%E9%81%8D%E5%8E%86%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">3 P1229 遍历问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7-2"><span class="nav-number">3.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">3.2.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-2"><span class="nav-number">3.2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-2"><span class="nav-number">3.2.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-2"><span class="nav-number">3.2.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-2"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-2"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-2"><span class="nav-number">3.3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-2"><span class="nav-number">3.3.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-2"><span class="nav-number">3.4.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-P1387-%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2"><span class="nav-number">4.</span> <span class="nav-text">4 P1387 最大正方形</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7-3"><span class="nav-number">4.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-3"><span class="nav-number">4.2.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-3"><span class="nav-number">4.2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-3"><span class="nav-number">4.2.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-3"><span class="nav-number">4.2.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-3"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-3"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-3"><span class="nav-number">4.3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-3"><span class="nav-number">4.3.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-2"><span class="nav-number">4.3.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-3"><span class="nav-number">4.4.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-P1123-%E5%8F%96%E6%95%B0%E6%B8%B8%E6%88%8F"><span class="nav-number">5.</span> <span class="nav-text">5 P1123 取数游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7-4"><span class="nav-number">5.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-4"><span class="nav-number">5.2.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-4"><span class="nav-number">5.2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-4"><span class="nav-number">5.2.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-4"><span class="nav-number">5.2.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-4"><span class="nav-number">5.2.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-4"><span class="nav-number">5.2.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">5.2.3.3.</span> <span class="nav-text">提示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-4"><span class="nav-number">5.3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-4"><span class="nav-number">5.3.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-3"><span class="nav-number">5.3.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-4"><span class="nav-number">5.4.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-P1576-%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9"><span class="nav-number">6.</span> <span class="nav-text">6 P1576 最小花费</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7-5"><span class="nav-number">6.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-5"><span class="nav-number">6.2.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-5"><span class="nav-number">6.2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-5"><span class="nav-number">6.2.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-5"><span class="nav-number">6.2.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-5"><span class="nav-number">6.2.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-5"><span class="nav-number">6.2.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA-1"><span class="nav-number">6.2.3.3.</span> <span class="nav-text">提示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-5"><span class="nav-number">6.3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-5"><span class="nav-number">6.3.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-4"><span class="nav-number">6.3.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-5"><span class="nav-number">6.4.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-P2141-NOIP2014-%E6%99%AE%E5%8F%8A%E7%BB%84-%E7%8F%A0%E5%BF%83%E7%AE%97%E6%B5%8B%E9%AA%8C"><span class="nav-number">7.</span> <span class="nav-text">7 P2141 [NOIP2014 普及组] 珠心算测验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7-6"><span class="nav-number">7.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-6"><span class="nav-number">7.2.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-6"><span class="nav-number">7.2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-6"><span class="nav-number">7.2.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-6"><span class="nav-number">7.2.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-6"><span class="nav-number">7.2.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-6"><span class="nav-number">7.2.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA-2"><span class="nav-number">7.2.3.3.</span> <span class="nav-text">提示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-6"><span class="nav-number">7.3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-6"><span class="nav-number">7.3.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-5"><span class="nav-number">7.3.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-6"><span class="nav-number">7.4.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-P1004-NOIP2000-%E6%8F%90%E9%AB%98%E7%BB%84-%E6%96%B9%E6%A0%BC%E5%8F%96%E6%95%B0"><span class="nav-number">8.</span> <span class="nav-text">8 P1004 [NOIP2000 提高组] 方格取数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7-7"><span class="nav-number">8.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-7"><span class="nav-number">8.2.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-7"><span class="nav-number">8.2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-7"><span class="nav-number">8.2.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-7"><span class="nav-number">8.2.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-7"><span class="nav-number">8.2.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-7"><span class="nav-number">8.2.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA-3"><span class="nav-number">8.2.3.3.</span> <span class="nav-text">提示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-7"><span class="nav-number">8.3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-7"><span class="nav-number">8.3.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-6"><span class="nav-number">8.3.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-7"><span class="nav-number">8.4.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-P1006-NOIP2008-%E6%8F%90%E9%AB%98%E7%BB%84-%E4%BC%A0%E7%BA%B8%E6%9D%A1"><span class="nav-number">9.</span> <span class="nav-text">9 P1006 [NOIP2008 提高组] 传纸条</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7-8"><span class="nav-number">9.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-8"><span class="nav-number">9.2.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-8"><span class="nav-number">9.2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-8"><span class="nav-number">9.2.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-8"><span class="nav-number">9.2.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-8"><span class="nav-number">9.2.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-8"><span class="nav-number">9.2.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA-4"><span class="nav-number">9.2.3.3.</span> <span class="nav-text">提示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-8"><span class="nav-number">9.3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-8"><span class="nav-number">9.3.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-7"><span class="nav-number">9.3.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-8"><span class="nav-number">9.4.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-P1018-NOIP2000-%E6%8F%90%E9%AB%98%E7%BB%84-%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7"><span class="nav-number">10.</span> <span class="nav-text">10 P1018 [NOIP2000 提高组] 乘积最大</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7-9"><span class="nav-number">10.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-9"><span class="nav-number">10.2.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-9"><span class="nav-number">10.2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-9"><span class="nav-number">10.2.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-9"><span class="nav-number">10.2.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-9"><span class="nav-number">10.2.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-9"><span class="nav-number">10.2.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA-5"><span class="nav-number">10.2.3.3.</span> <span class="nav-text">提示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-9"><span class="nav-number">10.3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-9"><span class="nav-number">10.3.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-8"><span class="nav-number">10.3.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-9"><span class="nav-number">10.4.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-P1016-NOIP1999-%E6%8F%90%E9%AB%98%E7%BB%84-%E6%97%85%E8%A1%8C%E5%AE%B6%E7%9A%84%E9%A2%84%E7%AE%97"><span class="nav-number">11.</span> <span class="nav-text">11 P1016 [NOIP1999 提高组] 旅行家的预算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7-10"><span class="nav-number">11.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-10"><span class="nav-number">11.2.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-10"><span class="nav-number">11.2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-10"><span class="nav-number">11.2.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-10"><span class="nav-number">11.2.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-10"><span class="nav-number">11.2.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-10"><span class="nav-number">11.2.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA-6"><span class="nav-number">11.2.3.3.</span> <span class="nav-text">提示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-10"><span class="nav-number">11.3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-10"><span class="nav-number">11.3.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-9"><span class="nav-number">11.3.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-10"><span class="nav-number">11.4.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-P2434-SDOI2005-%E5%8C%BA%E9%97%B4"><span class="nav-number">12.</span> <span class="nav-text">12 P2434 [SDOI2005]区间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7-11"><span class="nav-number">12.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-11"><span class="nav-number">12.2.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-11"><span class="nav-number">12.2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-11"><span class="nav-number">12.2.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-11"><span class="nav-number">12.2.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-11"><span class="nav-number">12.2.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-11"><span class="nav-number">12.2.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA-7"><span class="nav-number">12.2.3.3.</span> <span class="nav-text">提示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-11"><span class="nav-number">12.3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-11"><span class="nav-number">12.3.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-10"><span class="nav-number">12.3.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-11"><span class="nav-number">12.4.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-P3842-TJOI2007-%E7%BA%BF%E6%AE%B5"><span class="nav-number">13.</span> <span class="nav-text">13 P3842 [TJOI2007]线段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-12"><span class="nav-number">13.1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-12"><span class="nav-number">13.1.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-12"><span class="nav-number">13.1.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-12"><span class="nav-number">13.1.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-12"><span class="nav-number">13.1.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-12"><span class="nav-number">13.1.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA-8"><span class="nav-number">13.1.3.3.</span> <span class="nav-text">提示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-12"><span class="nav-number">13.2.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-12"><span class="nav-number">13.2.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-11"><span class="nav-number">13.2.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-12"><span class="nav-number">13.3.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-P5414-YNOI2019-%E6%8E%92%E5%BA%8F"><span class="nav-number">14.</span> <span class="nav-text">14 P5414 [YNOI2019] 排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-13"><span class="nav-number">14.1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-13"><span class="nav-number">14.1.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-13"><span class="nav-number">14.1.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-13"><span class="nav-number">14.1.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-13"><span class="nav-number">14.1.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-13"><span class="nav-number">14.1.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA-9"><span class="nav-number">14.1.3.3.</span> <span class="nav-text">提示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-13"><span class="nav-number">14.2.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-13"><span class="nav-number">14.2.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-12"><span class="nav-number">14.2.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-13"><span class="nav-number">14.3.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-P2023-AHOI2009-%E7%BB%B4%E6%8A%A4%E5%BA%8F%E5%88%97"><span class="nav-number">15.</span> <span class="nav-text">15 P2023 [AHOI2009] 维护序列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90%E5%8F%8A%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7-12"><span class="nav-number">15.1.</span> <span class="nav-text">问题来源及登录账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E8%83%8C%E6%99%AF"><span class="nav-number">15.2.</span> <span class="nav-text">题目背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-14"><span class="nav-number">15.3.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-14"><span class="nav-number">15.3.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-14"><span class="nav-number">15.3.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-14"><span class="nav-number">15.3.3.</span> <span class="nav-text">样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1-14"><span class="nav-number">15.3.3.1.</span> <span class="nav-text">样例输入 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1-14"><span class="nav-number">15.3.3.2.</span> <span class="nav-text">样例输出 #1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA-10"><span class="nav-number">15.3.3.3.</span> <span class="nav-text">提示</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA-1-%E8%A7%A3%E9%87%8A"><span class="nav-number">15.3.3.3.1.</span> <span class="nav-text">样例输入输出 1 解释</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1%E4%B8%8E%E7%BA%A6%E5%AE%9A"><span class="nav-number">15.3.3.3.2.</span> <span class="nav-text">数据规模与约定</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-14"><span class="nav-number">15.4.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E4%B8%8E%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1-14"><span class="nav-number">15.4.1.</span> <span class="nav-text">问题分析与算法设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81-13"><span class="nav-number">15.4.2.</span> <span class="nav-text">算法代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%AE%A8%E8%AE%BA-14"><span class="nav-number">15.5.</span> <span class="nav-text">总结与讨论</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="赋 倖"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">赋 倖</p>
+  <div class="site-description" itemprop="description">东京之北 千叶逢春 好景如水彩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SkyTravelar" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SkyTravelar" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.shilinli.com/" title="http:&#x2F;&#x2F;www.shilinli.com&#x2F;" rel="noopener" target="_blank">indexss's</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赋 倖</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
