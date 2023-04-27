@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"skytravelar.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="汇编 用递归方法计算菲波拉列级数前20位 以十进制形式输出">
+  <meta name="description" content="算法分析与设计第十次作业">
 <meta property="og:type" content="article">
-<meta property="og:title" content="输出斐波拉契数列前20项">
-<meta property="og:url" content="https://skytravelar.github.io/2022/12/12/9/index.html">
+<meta property="og:title" content="拾">
+<meta property="og:url" content="https://skytravelar.github.io/2023/04/27/22/index.html">
 <meta property="og:site_name" content="賦幸の個人ブログ">
-<meta property="og:description" content="汇编 用递归方法计算菲波拉列级数前20位 以十进制形式输出">
+<meta property="og:description" content="算法分析与设计第十次作业">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-12T05:40:02.000Z">
-<meta property="article:modified_time" content="2022-12-12T05:58:07.923Z">
+<meta property="article:published_time" content="2023-04-27T14:09:03.000Z">
+<meta property="article:modified_time" content="2023-04-27T14:10:12.277Z">
 <meta property="article:author" content="赋 倖">
-<meta property="article:tag" content="汇编">
+<meta property="article:tag" content="算法分析与设计">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://skytravelar.github.io/2022/12/12/9/">
+<link rel="canonical" href="https://skytravelar.github.io/2023/04/27/22/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>输出斐波拉契数列前20项 | 賦幸の個人ブログ</title>
+  <title>拾 | 賦幸の個人ブログ</title>
   
 
 
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2022/12/12/9/">
+    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2023/04/27/22/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          输出斐波拉契数列前20项
+          拾
         </h1>
 
         <div class="post-meta">
@@ -213,7 +213,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-12-12 13:40:02 / 修改时间：13:58:07" itemprop="dateCreated datePublished" datetime="2022-12-12T13:40:02+08:00">2022-12-12</time>
+              <time title="创建时间：2023-04-27 22:09:03 / 修改时间：22:10:12" itemprop="dateCreated datePublished" datetime="2023-04-27T22:09:03+08:00">2023-04-27</time>
             </span>
 
           
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
-            <div class="post-description">汇编 用递归方法计算菲波拉列级数前20位 以十进制形式输出</div>
+            <div class="post-description">算法分析与设计第十次作业</div>
 
         </div>
       </header>
@@ -235,8 +235,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">DATAS SEGMENT</span><br><span class="line"> VAL    DW 20 DUP(0)</span><br><span class="line">DATAS ENDS</span><br><span class="line">STACKS SEGMENT</span><br><span class="line"> DW 30 DUP(0)</span><br><span class="line">STACKS ENDS</span><br><span class="line">CODES SEGMENT</span><br><span class="line">    ASSUME CS:CODES,DS:DATAS,SS:DATAS</span><br><span class="line">START:</span><br><span class="line">    MOV AX,DATAS</span><br><span class="line">    MOV DS,AX</span><br><span class="line">    MOV AX,STACKS</span><br><span class="line">    MOV SS,AX</span><br><span class="line">    MOV DI,0</span><br><span class="line">    MOV AX,1</span><br><span class="line">    MOV DX,1</span><br><span class="line">    JMP FIBO</span><br><span class="line">    </span><br><span class="line">FIBO:   MOV VAL[DI],AX</span><br><span class="line">		ADD DI,2</span><br><span class="line">		MOV VAL[DI],DX</span><br><span class="line">		ADD DI,2</span><br><span class="line">		ADD AX,DX</span><br><span class="line">		ADD DX,AX</span><br><span class="line">		CMP DI,40</span><br><span class="line">		JAE  BACK</span><br><span class="line">		CALL FIBO</span><br><span class="line">		RET</span><br><span class="line">	  </span><br><span class="line">BACK:   </span><br><span class="line">  MOV DI,0</span><br><span class="line">   MOV CX,20</span><br><span class="line">   MOV DX,0</span><br><span class="line">   </span><br><span class="line">L1:    </span><br><span class="line">        MOV AX,VAL[DI]</span><br><span class="line">  ADD DI,2</span><br><span class="line">  CMP AX,1000</span><br><span class="line">  JNB P1</span><br><span class="line">  CMP AX,100</span><br><span class="line">  JNB P2</span><br><span class="line">  CMP AX,10</span><br><span class="line">  JNB P3</span><br><span class="line">  CMP AX,1</span><br><span class="line">  JNB P4</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">P1:  MOV BX,1000</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  MOV DX,0</span><br><span class="line">  </span><br><span class="line">P2:  MOV BX,100</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  MOV DX,0</span><br><span class="line">  </span><br><span class="line">P3:     MOV BX,10</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  MOV DX,0</span><br><span class="line">  </span><br><span class="line">P4:    </span><br><span class="line">        MOV BX,1</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  </span><br><span class="line">  MOV DL,32</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  MOV DX,0</span><br><span class="line">  LOOP L1</span><br><span class="line">  </span><br><span class="line">  MOV AX,4C00H</span><br><span class="line">  INT 21H</span><br><span class="line">CODES ENDS</span><br><span class="line">    END START</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+        <h1 id="问题一">问题一</h1>
+<h2 id="问题分析">问题分析</h2>
+<p>调研学习并给出矩阵的LU分解方法。</p>
+<h2 id="调研">调研</h2>
+<p>LU分解是一种线性代数的基本算法，它将一个矩阵分解为一个下三角矩阵L和一个上三角矩阵U的乘积，即A=LU。</p>
+<p>LU分解有很多种方法，其中常用的是高斯消元法和Doolittle分解法。</p>
+<p>高斯消元法是最基本的LU分解方法之一，其主要思想是利用初等行变换将原矩阵A化为一个上三角矩阵U，然后通过反向代入得到下三角矩阵L。具体步骤如下：</p>
+<ol type="1">
+<li>将原矩阵A的第一列作为主元素，通过初等行变换将第一列下面的所有元素都变为0，得到第一行和新的矩阵B；</li>
+<li>对新矩阵B的子矩阵（除去第一行和第一列）重复步骤1，直到得到上三角矩阵U；</li>
+<li>设置下三角矩阵L的对角线为1，其他元素为对应位置上未被消元的矩阵A的元素的相反数。</li>
+</ol>
+<p>Doolittle分解法也是常用的LU分解方法之一，它与高斯消元法类似，但是将计算过程中的主元素选为1，使得计算更加简单。具体步骤如下：</p>
+<ol type="1">
+<li>将对角线元素设置为1，并将矩阵A分解为一个下三角矩阵L和一个上三角矩阵U；</li>
+<li>对于每一行i（i=1,2,...,n），消去矩阵A的第i列下面的所有元素，得到新矩阵A'；</li>
+<li>根据公式A'=LU计算出L和U。</li>
+</ol>
+<p>以上是LU分解的两种常用方法，它们都可以通过数值计算软件来实现。</p>
+<h1 id="问题二">问题二</h1>
+<h2 id="问题分析-1">问题分析</h2>
+<p>给出方案计算可逆矩阵的逆。</p>
+<h2 id="算法思路">算法思路</h2>
+<p>​
+计算可逆矩阵的逆可以使用高斯-约旦消元法。该方法是在矩阵后面连接一个单位矩阵，然后利用行变换将左边的矩阵化为单位矩阵，右边的矩阵就是原矩阵的逆矩阵。</p>
+<h2 id="算法代码与分析">算法代码与分析</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">// 交换两个数</span><br><span class="line">void swap(double&amp; a, double&amp; b) &#123;</span><br><span class="line">    double temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 高斯-约旦消元法求解逆矩阵</span><br><span class="line">vector&lt;vector&lt;double&gt;&gt; inverse(vector&lt;vector&lt;double&gt;&gt;&amp; A) &#123;</span><br><span class="line">    int n = A.size();</span><br><span class="line">    // 构造增广矩阵</span><br><span class="line">    vector&lt;vector&lt;double&gt;&gt; aug(n, vector&lt;double&gt;(2 * n));</span><br><span class="line">    for (int i = 0; i &lt; n; ++i) &#123;</span><br><span class="line">        for (int j = 0; j &lt; n; ++j) &#123;</span><br><span class="line">            aug[i][j] = A[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">        aug[i][n + i] = 1.0;</span><br><span class="line">    &#125;</span><br><span class="line">    // 消元过程</span><br><span class="line">    for (int k = 0; k &lt; n; ++k) &#123;</span><br><span class="line">        // 将主元素缩放为1</span><br><span class="line">        double pivot = aug[k][k];</span><br><span class="line">        for (int j = k; j &lt; 2 * n; ++j) &#123;</span><br><span class="line">            aug[k][j] /= pivot;</span><br><span class="line">        &#125;</span><br><span class="line">        // 将消元时用到的行变换应用到右边的矩阵上</span><br><span class="line">        for (int i = 0; i &lt; n; ++i) &#123;</span><br><span class="line">            if (i != k) &#123;</span><br><span class="line">                double factor = aug[i][k];</span><br><span class="line">                for (int j = k; j &lt; 2 * n; ++j) &#123;</span><br><span class="line">                    aug[i][j] -= factor * aug[k][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // 获取逆矩阵</span><br><span class="line">    vector&lt;vector&lt;double&gt;&gt; inv(n, vector&lt;double&gt;(n));</span><br><span class="line">    for (int i = 0; i &lt; n; ++i) &#123;</span><br><span class="line">        for (int j = 0; j &lt; n; ++j) &#123;</span><br><span class="line">            inv[i][j] = aug[i][n + j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return inv;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    vector&lt;vector&lt;double&gt;&gt; A &#123;&#123;1.0, 2.0&#125;, &#123;3.0, 4.0&#125;&#125;; // 待求逆矩阵</span><br><span class="line">    vector&lt;vector&lt;double&gt;&gt; invA = inverse(A);</span><br><span class="line">    cout &lt;&lt; &quot;Inverse of A:&quot; &lt;&lt; endl;</span><br><span class="line">    for (int i = 0; i &lt; invA.size(); ++i) &#123;</span><br><span class="line">        for (int j = 0; j &lt; invA[0].size(); ++j) &#123;</span><br><span class="line">            cout &lt;&lt; invA[i][j] &lt;&lt; &quot; &quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -246,7 +271,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%B1%87%E7%BC%96/" rel="tag"># 汇编</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag"># 算法分析与设计</a>
           </div>
 
         
@@ -255,13 +280,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/12/12/8/" rel="prev" title="输出斐波拉契数列前50项">
-      <i class="fa fa-chevron-left"></i> 输出斐波拉契数列前50项
+    <a href="/2023/04/27/21/" rel="prev" title="玖">
+      <i class="fa fa-chevron-left"></i> 玖
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/12/12/10/" rel="next" title="对二十个数进行排序">
-      对二十个数进行排序 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -320,6 +342,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">问题一</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%A0%94"><span class="nav-number">1.2.</span> <span class="nav-text">调研</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C"><span class="nav-number">2.</span> <span class="nav-text">问题二</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90-1"><span class="nav-number">2.1.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E8%B7%AF"><span class="nav-number">2.2.</span> <span class="nav-text">算法思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81%E4%B8%8E%E5%88%86%E6%9E%90"><span class="nav-number">2.3.</span> <span class="nav-text">算法代码与分析</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

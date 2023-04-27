@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"skytravelar.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="算法分析与设计第一次作业">
+  <meta name="description" content="算法分析与设计第八次作业">
 <meta property="og:type" content="article">
-<meta property="og:title" content="壹">
-<meta property="og:url" content="https://skytravelar.github.io/2023/04/26/13/index.html">
+<meta property="og:title" content="捌">
+<meta property="og:url" content="https://skytravelar.github.io/2023/04/27/20/index.html">
 <meta property="og:site_name" content="賦幸の個人ブログ">
-<meta property="og:description" content="算法分析与设计第一次作业">
+<meta property="og:description" content="算法分析与设计第八次作业">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-26T14:05:48.000Z">
-<meta property="article:modified_time" content="2023-04-26T14:07:05.680Z">
+<meta property="article:published_time" content="2023-04-27T13:56:43.000Z">
+<meta property="article:modified_time" content="2023-04-27T14:05:56.347Z">
 <meta property="article:author" content="赋 倖">
 <meta property="article:tag" content="算法分析与设计">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://skytravelar.github.io/2023/04/26/13/">
+<link rel="canonical" href="https://skytravelar.github.io/2023/04/27/20/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>壹 | 賦幸の個人ブログ</title>
+  <title>捌 | 賦幸の個人ブログ</title>
   
 
 
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2023/04/26/13/">
+    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2023/04/27/20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          壹
+          捌
         </h1>
 
         <div class="post-meta">
@@ -213,7 +213,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-04-26 22:05:48 / 修改时间：22:07:05" itemprop="dateCreated datePublished" datetime="2023-04-26T22:05:48+08:00">2023-04-26</time>
+              <time title="创建时间：2023-04-27 21:56:43 / 修改时间：22:05:56" itemprop="dateCreated datePublished" datetime="2023-04-27T21:56:43+08:00">2023-04-27</time>
             </span>
 
           
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
-            <div class="post-description">算法分析与设计第一次作业</div>
+            <div class="post-description">算法分析与设计第八次作业</div>
 
         </div>
       </header>
@@ -237,18 +237,26 @@
       
         <h1 id="问题1">问题1</h1>
 <h2 id="问题分析">问题分析</h2>
-<p>设计一栈结构，使得出栈、入栈以及求栈的最小值均能在O(1)时间内完成。</p>
+<p>给出策略打印旋转矩阵。以及如何实现“之”字形打印矩阵</p>
 <h2 id="算法思路">算法思路</h2>
-<p>创建两个栈，其中一个栈存储全部数据，另一个栈存放这组数据中的最小值。</p>
+<p>先将矩阵逆时针旋转90度，然后按行打印。定义变量flag用来标记遍历的方向，如果为true表示向右上方走，如果为false表示向左下方走。在循环中根据flag的值判断应该向哪个方向遍历，同时也需要考虑边界问题。</p>
 <h2 id="算法代码与分析">算法代码与分析</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">template&lt;class T&gt;</span><br><span class="line"></span><br><span class="line">class Stack&#123;</span><br><span class="line">private:</span><br><span class="line">	stack&lt;T&gt; s1;//存储全部数据</span><br><span class="line">	stack&lt;T&gt; s2;//存储最小值</span><br><span class="line">public:</span><br><span class="line">	void push(const T&amp; x)&#123;</span><br><span class="line">		s1.push(x);</span><br><span class="line">		if (s1.size() == 1)</span><br><span class="line">			s2.push(s1.top());</span><br><span class="line">		else&#123;</span><br><span class="line">			if (s1.top() &lt;= s2.top())&#123;</span><br><span class="line">				s2.push(s1.top());</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;//入栈</span><br><span class="line"></span><br><span class="line">	void Pop()&#123;</span><br><span class="line">		if (!s1.empty())&#123;</span><br><span class="line">			if (s1.top() == s2.top())</span><br><span class="line">				s2.pop();</span><br><span class="line">			s1.pop();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;//出栈</span><br><span class="line"></span><br><span class="line">	T&amp; Min()&#123;</span><br><span class="line">		return s2.top();</span><br><span class="line">	&#125;//返回最小值</span><br><span class="line"></span><br><span class="line">	size_t Size()&#123;</span><br><span class="line">		return s1.size();</span><br><span class="line">	&#125;//返回栈中元素个数</span><br><span class="line"></span><br><span class="line">	bool Empty()&#123;</span><br><span class="line">		return s1.empty();</span><br><span class="line">	&#125;//判断栈是否为空</span><br><span class="line"></span><br><span class="line">	T&amp; Top()&#123;</span><br><span class="line">		return s1.top();</span><br><span class="line">	&#125;//返回栈顶元素</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	Stack&lt;int&gt; s;</span><br><span class="line">	s.push(6);</span><br><span class="line">	s.push(7);</span><br><span class="line">	s.push(2);</span><br><span class="line">	s.push(1);</span><br><span class="line">	s.push(9);</span><br><span class="line">	cout &lt;&lt; s.Size() &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; s.Min() &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; s.Top() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="打印旋转矩阵">打印旋转矩阵</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">void printRotateMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">	int m = matrix.size();</span><br><span class="line">	if (m == 0) </span><br><span class="line">		return;</span><br><span class="line">	int n = matrix[0].size();// 逆时针旋转90度</span><br><span class="line">	for (int i = 0; i &lt; m / 2; ++i) &#123;</span><br><span class="line">		for (int j = i; j &lt; n - i - 1; ++j) &#123;</span><br><span class="line">			int temp = matrix[i][j];            </span><br><span class="line">			matrix[i][j] = matrix[j][n - i - 1];            </span><br><span class="line">			matrix[j][n - i - 1] = matrix[m - i - 1][n - j - 1];            </span><br><span class="line">			matrix[m - i - 1][n - j - 1] = matrix[n - j - 1][i];            </span><br><span class="line">			matrix[n - j - 1][i] = temp;        </span><br><span class="line">		&#125;    </span><br><span class="line">	&#125;</span><br><span class="line">    // 按行打印</span><br><span class="line">    for (int i = 0; i &lt; m; ++i) &#123;</span><br><span class="line">    	for (int j = 0; j &lt; n; ++j) &#123;            </span><br><span class="line">    		cout &lt;&lt; matrix[i][j] &lt;&lt; &quot; &quot;;        </span><br><span class="line">    	&#125;        </span><br><span class="line">    	cout &lt;&lt; endl;    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="之字形打印矩阵">之字形打印矩阵</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">void printZigzagMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">    int m = matrix.size();</span><br><span class="line">    if (m == 0) return;</span><br><span class="line">    int n = matrix[0].size();</span><br><span class="line"></span><br><span class="line">    int i = 0, j = 0;</span><br><span class="line">    bool flag = true; // 标记方向</span><br><span class="line">    for (int k = 0; k &lt; m + n - 1; ++k) &#123;</span><br><span class="line">        if (flag) &#123;</span><br><span class="line">            while (i &gt;= 0 &amp;&amp; j &lt; n) &#123;</span><br><span class="line">                cout &lt;&lt; matrix[i][j] &lt;&lt; &quot; &quot;;</span><br><span class="line">                --i;</span><br><span class="line">                ++j;</span><br><span class="line">            &#125;</span><br><span class="line">            if (j &lt; n) &#123;</span><br><span class="line">                i = 0;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                i += 2;</span><br><span class="line">                --j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            while (i &lt; m &amp;&amp; j &gt;= 0) &#123;</span><br><span class="line">                cout &lt;&lt; matrix[i][j] &lt;&lt; &quot; &quot;;</span><br><span class="line">                ++i;</span><br><span class="line">                --j;</span><br><span class="line">            &#125;</span><br><span class="line">            if (i &lt; m) &#123;</span><br><span class="line">                j = 0;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                j += 2;</span><br><span class="line">                --i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        flag = !flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="问题2">问题2</h1>
 <h2 id="问题分析-1">问题分析</h2>
-<p>改进冒泡排序使得在最好情况下可以在线性时间内完成。</p>
+<p>给出策略返回一个m*n矩阵中从[1,1]到[m,n]的和最小的一条路径。</p>
 <h2 id="算法思路-1">算法思路</h2>
-<p>在外层循环中加入一个bool变量用来判断在循环中是否发生了交换，如果没有交换，那么就可以说明数组的顺序已经排好了，直接结束循环，此时的复杂度即为O(n)。</p>
-<h2 id="算法代码及分析">算法代码及分析</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int m=0,n;//m存储排序次数 n存储需要排序的元素的个数</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	int a[n];</span><br><span class="line">	for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">		cin&gt;&gt;a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	bool flag=false;//标志位 倘若未改动则表示元素有序 直接停止循环</span><br><span class="line">	for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">		for(int j=0;j&lt;n-i-1;j++)&#123;</span><br><span class="line">			if(a[j]&gt;a[j+1])&#123;</span><br><span class="line">				int temp =a[j];</span><br><span class="line">				a[j]=a[j+1];</span><br><span class="line">				a[j+1]=a[j];</span><br><span class="line">				flag = true;</span><br><span class="line">				m++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(flag==false)&#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;m&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从起点开始，依次计算到达每个格子的最小路径和，最后得到终点的最小路径和。计算的过程中，我们可以利用一个二维数组dp来记录到达每个格子的最小路径和。初始化dp[1][1]为grid[1][1]，然后按照以下公式递推：
+若i&gt;1且j&gt;1，则dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]
+若i=1且j&gt;1，则dp[1][j] = dp[1][j-1] + grid[1][j]
+若i&gt;1且j=1，则dp[i][1] = dp[i-1][1] + grid[i][1]。
+其中grid[i][j]表示矩阵中第i行第j列格子中的数字。
+最后，得到的dp[m][n]就是从起点到终点的最小路径和。回溯一下dp数组，就可以得到一条满足题目要求的最小路径。</p>
+<h2 id="算法分析与设计">算法分析与设计</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;public:</span><br><span class="line">    int minPathSum(vector&lt;vector&lt;int&gt;&gt;&amp; grid) &#123;</span><br><span class="line">        int m = grid.size();</span><br><span class="line">        int n = grid[0].size();</span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt; dp(m, vector&lt;int&gt;(n, 0));</span><br><span class="line">        dp[0][0] = grid[0][0];</span><br><span class="line">        for (int i = 1; i &lt; m; i++) &#123;</span><br><span class="line">            dp[i][0] = dp[i-1][0] + grid[i][0];</span><br><span class="line">        &#125;</span><br><span class="line">        for (int j = 1; j &lt; n; j++) &#123;</span><br><span class="line">            dp[0][j] = dp[0][j-1] + grid[0][j];</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 1; i &lt; m; i++) &#123;</span><br><span class="line">            for (int j = 1; j &lt; n; j++) &#123;</span><br><span class="line">                dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return dp[m-1][n-1];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -267,12 +275,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/04/26/11/" rel="prev" title="算法分析与设计实践">
-      <i class="fa fa-chevron-left"></i> 算法分析与设计实践
+    <a href="/2023/04/27/19/" rel="prev" title="柒">
+      <i class="fa fa-chevron-left"></i> 柒
     </a></div>
       <div class="post-nav-item">
-    <a href="/2023/04/26/14/" rel="next" title="贰">
-      贰 <i class="fa fa-chevron-right"></i>
+    <a href="/2023/04/27/21/" rel="next" title="玖">
+      玖 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -332,7 +340,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%981"><span class="nav-number">1.</span> <span class="nav-text">问题1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">算法思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81%E4%B8%8E%E5%88%86%E6%9E%90"><span class="nav-number">1.3.</span> <span class="nav-text">算法代码与分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%982"><span class="nav-number">2.</span> <span class="nav-text">问题2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90-1"><span class="nav-number">2.1.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E8%B7%AF-1"><span class="nav-number">2.2.</span> <span class="nav-text">算法思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81%E5%8F%8A%E5%88%86%E6%9E%90"><span class="nav-number">2.3.</span> <span class="nav-text">算法代码及分析</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%981"><span class="nav-number">1.</span> <span class="nav-text">问题1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">算法思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81%E4%B8%8E%E5%88%86%E6%9E%90"><span class="nav-number">1.3.</span> <span class="nav-text">算法代码与分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%8D%B0%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5"><span class="nav-number">1.3.1.</span> <span class="nav-text">打印旋转矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%8B%E5%AD%97%E5%BD%A2%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5"><span class="nav-number">1.3.2.</span> <span class="nav-text">之字形打印矩阵</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%982"><span class="nav-number">2.</span> <span class="nav-text">问题2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90-1"><span class="nav-number">2.1.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E8%B7%AF-1"><span class="nav-number">2.2.</span> <span class="nav-text">算法思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.3.</span> <span class="nav-text">算法分析与设计</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
