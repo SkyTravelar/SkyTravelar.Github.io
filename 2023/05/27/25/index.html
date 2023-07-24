@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"skytravelar.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="汇编 用递归方法计算菲波拉列级数前20位 以十进制形式输出">
+  <meta name="description" content="算法分析与设计第拾壹次作业">
 <meta property="og:type" content="article">
-<meta property="og:title" content="输出斐波拉契数列前20项">
-<meta property="og:url" content="https://skytravelar.github.io/2022/12/12/9/index.html">
+<meta property="og:title" content="拾壹">
+<meta property="og:url" content="https://skytravelar.github.io/2023/05/27/25/index.html">
 <meta property="og:site_name" content="賦幸の個人ブログ">
-<meta property="og:description" content="汇编 用递归方法计算菲波拉列级数前20位 以十进制形式输出">
+<meta property="og:description" content="算法分析与设计第拾壹次作业">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-12T05:40:02.000Z">
-<meta property="article:modified_time" content="2022-12-12T05:58:07.923Z">
+<meta property="article:published_time" content="2023-05-27T08:09:04.000Z">
+<meta property="article:modified_time" content="2023-05-27T08:26:26.306Z">
 <meta property="article:author" content="赋 倖">
-<meta property="article:tag" content="汇编">
+<meta property="article:tag" content="算法分析与设计">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://skytravelar.github.io/2022/12/12/9/">
+<link rel="canonical" href="https://skytravelar.github.io/2023/05/27/25/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>输出斐波拉契数列前20项 | 賦幸の個人ブログ</title>
+  <title>拾壹 | 賦幸の個人ブログ</title>
   
 
 
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2022/12/12/9/">
+    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2023/05/27/25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          输出斐波拉契数列前20项
+          拾壹
         </h1>
 
         <div class="post-meta">
@@ -213,7 +213,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-12-12 13:40:02 / 修改时间：13:58:07" itemprop="dateCreated datePublished" datetime="2022-12-12T13:40:02+08:00">2022-12-12</time>
+              <time title="创建时间：2023-05-27 16:09:04 / 修改时间：16:26:26" itemprop="dateCreated datePublished" datetime="2023-05-27T16:09:04+08:00">2023-05-27</time>
             </span>
 
           
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
-            <div class="post-description">汇编 用递归方法计算菲波拉列级数前20位 以十进制形式输出</div>
+            <div class="post-description">算法分析与设计第拾壹次作业</div>
 
         </div>
       </header>
@@ -235,8 +235,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">DATAS SEGMENT</span><br><span class="line"> VAL    DW 20 DUP(0)</span><br><span class="line">DATAS ENDS</span><br><span class="line">STACKS SEGMENT</span><br><span class="line"> DW 30 DUP(0)</span><br><span class="line">STACKS ENDS</span><br><span class="line">CODES SEGMENT</span><br><span class="line">    ASSUME CS:CODES,DS:DATAS,SS:DATAS</span><br><span class="line">START:</span><br><span class="line">    MOV AX,DATAS</span><br><span class="line">    MOV DS,AX</span><br><span class="line">    MOV AX,STACKS</span><br><span class="line">    MOV SS,AX</span><br><span class="line">    MOV DI,0</span><br><span class="line">    MOV AX,1</span><br><span class="line">    MOV DX,1</span><br><span class="line">    JMP FIBO</span><br><span class="line">    </span><br><span class="line">FIBO:   MOV VAL[DI],AX</span><br><span class="line">		ADD DI,2</span><br><span class="line">		MOV VAL[DI],DX</span><br><span class="line">		ADD DI,2</span><br><span class="line">		ADD AX,DX</span><br><span class="line">		ADD DX,AX</span><br><span class="line">		CMP DI,40</span><br><span class="line">		JAE  BACK</span><br><span class="line">		CALL FIBO</span><br><span class="line">		RET</span><br><span class="line">	  </span><br><span class="line">BACK:   </span><br><span class="line">  MOV DI,0</span><br><span class="line">   MOV CX,20</span><br><span class="line">   MOV DX,0</span><br><span class="line">   </span><br><span class="line">L1:    </span><br><span class="line">        MOV AX,VAL[DI]</span><br><span class="line">  ADD DI,2</span><br><span class="line">  CMP AX,1000</span><br><span class="line">  JNB P1</span><br><span class="line">  CMP AX,100</span><br><span class="line">  JNB P2</span><br><span class="line">  CMP AX,10</span><br><span class="line">  JNB P3</span><br><span class="line">  CMP AX,1</span><br><span class="line">  JNB P4</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">P1:  MOV BX,1000</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  MOV DX,0</span><br><span class="line">  </span><br><span class="line">P2:  MOV BX,100</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  MOV DX,0</span><br><span class="line">  </span><br><span class="line">P3:     MOV BX,10</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  MOV DX,0</span><br><span class="line">  </span><br><span class="line">P4:    </span><br><span class="line">        MOV BX,1</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  </span><br><span class="line">  MOV DL,32</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  MOV DX,0</span><br><span class="line">  LOOP L1</span><br><span class="line">  </span><br><span class="line">  MOV AX,4C00H</span><br><span class="line">  INT 21H</span><br><span class="line">CODES ENDS</span><br><span class="line">    END START</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+        <h1 id="问题1">问题1</h1>
+<h2 id="问题分析">问题分析</h2>
+<p>图G中顶点vi到顶点vj之间长度为k的路径数量等于AK的第(i,j)个元素，其中A是图G的邻接矩阵。</p>
+<h2 id="理论证明">理论证明</h2>
+<p>可以采用数学归纳法来证明这个定理。分为以下几种情况。</p>
+<p>当k=1时，路径长度为1，只有当vi和vj之间有一条边时，路径数量才为1，此时AK的第(i,j)个元素为1，定理成立。</p>
+<p>假设当k=m时，定理成立，即图G中顶点vi到顶点vj之间长度为m的路径数量等于AK的第(i,j)个元素。</p>
+<p>考虑当k=m+1时，顶点vi到顶点vj之间长度为m+1的路径可以分为两种情况：</p>
+<ul>
+<li>路径经过顶点vk，其中k不等于i和j。此时，路径可以表示为vi到vk的长度为m的路径，再加上vk到vj的一条边。根据归纳假设，vi到vk的长度为m的路径数量为AK的第(i,k)个元素，vk到vj的路径数量为AK的第(k,j)个元素，因此vi到vj经过vk的长度为m+1的路径数量为AK的第(i,k)乘以AK的第(k,j)。</li>
+<li>路径不经过顶点vk。此时，路径数量为vi到vj经过除了vk以外的其它顶点的长度为m的路径数量之和。根据归纳假设，vi到vj经过除了vk以外的其它顶点的长度为m的路径数量为AK的第(i,j)减去AK的第(i,k)乘以AK的第(k,j)，即AK的第(i,j)减去vi到vj经过vk的长度为m+1的路径数量。因此，vi到vj不经过vk的长度为m+1的路径数量为AK的第(i,j)减去vi到vj经过vk的长度为m+1的路径数量，即AK的第(i,j)减去AK的第(i,k)乘以AK的第(k,j)。</li>
+</ul>
+<p>综合上述两种情况，vi到vj长度为m+1的路径数量为AK的第(i,k)乘以AK的第(k,j)加上AK的第(i,j)减去AK的第(i,k)乘以AK的第(k,j)，即AK的第(i,j)，定理成立。</p>
+<h2 id="算法代码与分析">算法代码与分析</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int MAXN = 1005;</span><br><span class="line">int A[MAXN][MAXN];</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n, m;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m; // n为顶点数，m为边数</span><br><span class="line">    // 初始化邻接矩阵</span><br><span class="line">    for (int i = 1; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int j = 1; j &lt;= n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            A[i][j] = 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // 读入边并更新邻接矩阵</span><br><span class="line">    for (int i = 1; i &lt;= m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        int u, v;</span><br><span class="line">        cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line"></span><br><span class="line">        A[u][v] = 1;</span><br><span class="line">    &#125;</span><br><span class="line">    // 计算路径数量</span><br><span class="line">    int k;</span><br><span class="line">    cin &gt;&gt; k; // 路径长度</span><br><span class="line">    for (int t = 1; t &lt;= k; t++)</span><br><span class="line">    &#123;</span><br><span class="line">        int B[MAXN][MAXN];</span><br><span class="line">        // 初始化B矩阵</span><br><span class="line">        for (int i = 1; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for (int j = 1; j &lt;= n; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                B[i][j] = 0;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        // 计算B矩阵</span><br><span class="line">        for (int i = 1; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for (int j = 1; j &lt;= n; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                for (int l = 1; l &lt;= n; l++)</span><br><span class="line">                &#123;</span><br><span class="line">                    B[i][j] += A[i][l] * A[l][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        // 更新A矩阵</span><br><span class="line">        for (int i = 1; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for (int j = 1; j &lt;= n; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                A[i][j] = B[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // 输出结果</span><br><span class="line">    int s, t;</span><br><span class="line">    cin &gt;&gt; s &gt;&gt; t; // 起点和终点</span><br><span class="line">    cout &lt;&lt; A[s][t] &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -246,7 +259,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%B1%87%E7%BC%96/" rel="tag"># 汇编</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag"># 算法分析与设计</a>
           </div>
 
         
@@ -255,12 +268,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/12/12/8/" rel="prev" title="输出斐波拉契数列前50项">
-      <i class="fa fa-chevron-left"></i> 输出斐波拉契数列前50项
+    <a href="/2023/05/06/24/" rel="prev" title="实验二">
+      <i class="fa fa-chevron-left"></i> 实验二
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/12/12/10/" rel="next" title="对二十个数进行排序">
-      对二十个数进行排序 <i class="fa fa-chevron-right"></i>
+    <a href="/2023/05/27/26/" rel="next" title="拾贰">
+      拾贰 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -320,6 +333,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%981"><span class="nav-number">1.</span> <span class="nav-text">问题1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%AE%BA%E8%AF%81%E6%98%8E"><span class="nav-number">1.2.</span> <span class="nav-text">理论证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81%E4%B8%8E%E5%88%86%E6%9E%90"><span class="nav-number">1.3.</span> <span class="nav-text">算法代码与分析</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
