@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"skytravelar.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="汇编 用递归方法计算菲波拉列级数前20位 以十进制形式输出">
+  <meta name="description" content="搬运文章">
 <meta property="og:type" content="article">
-<meta property="og:title" content="输出斐波拉契数列前20项">
-<meta property="og:url" content="https://skytravelar.github.io/2022/12/12/9/index.html">
+<meta property="og:title" content="交易员的脑回路——在趋势面前判断市场究竟是否“合理”">
+<meta property="og:url" content="https://skytravelar.github.io/2024/03/09/19/index.html">
 <meta property="og:site_name" content="個人ブログ">
-<meta property="og:description" content="汇编 用递归方法计算菲波拉列级数前20位 以十进制形式输出">
+<meta property="og:description" content="搬运文章">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-12T05:40:02.000Z">
-<meta property="article:modified_time" content="2022-12-12T05:58:07.923Z">
+<meta property="article:published_time" content="2024-03-09T03:28:12.000Z">
+<meta property="article:modified_time" content="2024-03-09T03:32:30.388Z">
 <meta property="article:author" content="SkyTravelar">
-<meta property="article:tag" content="汇编">
+<meta property="article:tag" content="Undefined">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://skytravelar.github.io/2022/12/12/9/">
+<link rel="canonical" href="https://skytravelar.github.io/2024/03/09/19/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>输出斐波拉契数列前20项 | 個人ブログ</title>
+  <title>交易员的脑回路——在趋势面前判断市场究竟是否“合理” | 個人ブログ</title>
   
 
 
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2022/12/12/9/">
+    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2024/03/09/19/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          输出斐波拉契数列前20项
+          交易员的脑回路——在趋势面前判断市场究竟是否“合理”
         </h1>
 
         <div class="post-meta">
@@ -213,7 +213,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-12-12 13:40:02 / 修改时间：13:58:07" itemprop="dateCreated datePublished" datetime="2022-12-12T13:40:02+08:00">2022-12-12</time>
+              <time title="创建时间：2024-03-09 11:28:12 / 修改时间：11:32:30" itemprop="dateCreated datePublished" datetime="2024-03-09T11:28:12+08:00">2024-03-09</time>
             </span>
 
           
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
-            <div class="post-description">汇编 用递归方法计算菲波拉列级数前20位 以十进制形式输出</div>
+            <div class="post-description">搬运文章</div>
 
         </div>
       </header>
@@ -235,7 +235,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">DATAS SEGMENT</span><br><span class="line"> VAL    DW 20 DUP(0)</span><br><span class="line">DATAS ENDS</span><br><span class="line">STACKS SEGMENT</span><br><span class="line"> DW 30 DUP(0)</span><br><span class="line">STACKS ENDS</span><br><span class="line">CODES SEGMENT</span><br><span class="line">    ASSUME CS:CODES,DS:DATAS,SS:DATAS</span><br><span class="line">START:</span><br><span class="line">    MOV AX,DATAS</span><br><span class="line">    MOV DS,AX</span><br><span class="line">    MOV AX,STACKS</span><br><span class="line">    MOV SS,AX</span><br><span class="line">    MOV DI,0</span><br><span class="line">    MOV AX,1</span><br><span class="line">    MOV DX,1</span><br><span class="line">    JMP FIBO</span><br><span class="line">    </span><br><span class="line">FIBO:   MOV VAL[DI],AX</span><br><span class="line">		ADD DI,2</span><br><span class="line">		MOV VAL[DI],DX</span><br><span class="line">		ADD DI,2</span><br><span class="line">		ADD AX,DX</span><br><span class="line">		ADD DX,AX</span><br><span class="line">		CMP DI,40</span><br><span class="line">		JAE  BACK</span><br><span class="line">		CALL FIBO</span><br><span class="line">		RET</span><br><span class="line">	  </span><br><span class="line">BACK:   </span><br><span class="line">  MOV DI,0</span><br><span class="line">   MOV CX,20</span><br><span class="line">   MOV DX,0</span><br><span class="line">   </span><br><span class="line">L1:    </span><br><span class="line">        MOV AX,VAL[DI]</span><br><span class="line">  ADD DI,2</span><br><span class="line">  CMP AX,1000</span><br><span class="line">  JNB P1</span><br><span class="line">  CMP AX,100</span><br><span class="line">  JNB P2</span><br><span class="line">  CMP AX,10</span><br><span class="line">  JNB P3</span><br><span class="line">  CMP AX,1</span><br><span class="line">  JNB P4</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">P1:  MOV BX,1000</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  MOV DX,0</span><br><span class="line">  </span><br><span class="line">P2:  MOV BX,100</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  MOV DX,0</span><br><span class="line">  </span><br><span class="line">P3:     MOV BX,10</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  MOV DX,0</span><br><span class="line">  </span><br><span class="line">P4:    </span><br><span class="line">        MOV BX,1</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  </span><br><span class="line">  MOV DL,32</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  MOV DX,0</span><br><span class="line">  LOOP L1</span><br><span class="line">  </span><br><span class="line">  MOV AX,4C00H</span><br><span class="line">  INT 21H</span><br><span class="line">CODES ENDS</span><br><span class="line">    END START</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>​
+一般哪怕是做超短线，你最好还是有一个比较清晰的思路，至少大概率的认为市场回向某一个方向运动，你要说就坐在电脑前，跟着盘面随便走，这个事情以前也许可以，现在你做的不如量化程序。而且哪怕判断好了大方向，市场如何达到那个位置依然是个问题。他是直接向上一口气冲上去。还是充一半找一个平台歇一歇再接着冲，或者就是三步一回头都有气不同的策略和入场方式，很大程度上要通过动能和量来判断。</p>
+<p>​
+冲的又快又猛，动能特别足的，大多都是消息面，一个天大的利好，大家都抢着进去，根本都没有什么对手盘挡你路，你就要激进，冲不进去就直接错过了，但如果市场一旦开始明显回头（消息刚出现十几秒内有可能会因为一些量化程序跑套利之类的程序没意识到有消息或者行情因此价格有短暂反复，那个不算）否则一般冲错了，赶紧出来保命。如果市场是三步一回头，磨磨蹭蹭，慢慢飘的。就不需要激进，等一个更好的价格再入场也不迟。如何判断动能又是一项独立的技能，无论你是通过量化程序拟合出潜在的类型，还是通过主观经验直接猜，很多时候都不是说你上来就能够判断对的。</p>
+<p>​
+事实上你也不需要全才，我之前的文章里写的很清楚，你只需要在某一类市场能够保证赚钱，在其他类型的市场别大亏，你就能做的很好。想做成全才，一方面也是比较困难，另一方面经常会有三个手表，哪个时间最准的问题？到底是在同一个标的上同时做突破，又做箱体震荡，还是说你直接找很多个不同的标的一起看但只做突破（没突破就等）这个看个人。但我个人认为前一种比较难，前一种前期对盘面的理解也许并不需要投入太多，只需要专注一个或一两个标的，但是之后非常注重判断，而后一种你需要充分理解不同品种的盘面特征，但是判断起来相对来讲要简单。</p>
+<p>​
+再比如说成交量也是如此。并不是说成交量高就一定好，这是一个适度的问题。一鼓作气，再而衰，三而竭。在市场上也很常见，因为市场背后对应的决策是一个个主体。哪怕是量化程序，他所学习的盘面，进行的回测，也大多是根据前人的主观判断特征而决定的。</p>
+<p>​
+没怎么投入，就取得了很好的结果，就容易轻敌（很可能是大资金还没有相互角力），容易之后被反扑。如果已经投入了很多，成交最后哪怕是突破了这个关卡，你的军队也需要休整。不能说是围城了三个月，攻破之后马上就可以快马加鞭赶上下一个战场。反之，你要是投入了很多的成交量，又没见到结果，那是努力又没有结果，这非常容易让人打退堂鼓的。损失了很多兵力，又攻不下来。先不说有没有逃兵？有没有投敌的？无论如何大部队得退下来歇歇。这东西就和手机游戏上瘾是一样的，时常给你一点小的正向回馈大家的才会持续士气高涨。反映在市场上就是反复的“短期积累动能向上突破”，这种动能一般是确实强。</p>
+<p>​
+我的意思是市场是走出来的，是买卖双方的实力变化决定的。而实力变化要符合自然界的一般规律，至少中短期（微观和长期另算）并不是纯粹的价格随机游走。但是我并不是说市面上没有例外，有可能市场可以不断投入，好似不知疲惫一路遇到很大的阻力都能冲高，但这并不常见。就好似战争，前线部队疲惫的时候需要大部队（长期资本，大资本）的扶持，而（市价单）攻城略地的同时也需要（限价单）来防止敌人偷袭。双方的限价单不够，就会出现chopping的状况，也就是虽然最后某一方也可能会胜出，但过程有可能就是双方你追我赶。你的动能，成交量，价格变化等一系列的因素最好要在一个恰当的区间，过多过少都会出现问题，而市场很可能不给你那么多恰当的机会，因此像视频当中那么清晰的机会，市面上其实是不多见的。</p>
+<p>​
+如何判断是否恰当是一个动态调整的过程，很难去讲，需要根据当时的市场周期而定。你无论是主观也好，量化也好，你都需要不断的根据最近的情况而调整，而并非是一个长期绝对数。如果你要问判断恰当有什么意义，我认为假设市场长期来讲也是符合一个事务运行的基本规律。那某种意义上你需要对市场的涨跌做一个评分标准。假设价格是涨了，但涨得不恰当。那么这个例子可能是一个独立事件，当然也有可能是最近有很多这样的独立事件，但是以后你再重复这样不恰当的交易时候，就要保持警惕。但如果市场长期都在不恰当的基础上取得优秀的结果，那么可能你需要更新恰当所意味的指标。你要问判断出市场涨跌的评分有什么意义，我想他最差也能给你信心，在犹豫不决时的信心，如果你做量化它也可以是一个入场仓位设定因子。</p>
+<p>​
+而另一方面，也有一些特殊的判断技巧。即使价格没有突破，但价格是否有粘性？即使市场三步一回头，但回头的步伐是不是比较固定？都是一些可取的参考目标。但市场那么大，机会那么多，尤其如果你做期货/期权还自带杠杆，并不涉及到股票那种总持仓时长，毕竟你也不是基本面交易。而基本面交易，尤其是价值分析，你要找的是别人埋没的黄金，那别人埋他肯定是有埋他的理由，你要等到他认错了，你才能给他挖出来说，哦，这是块黄金。巴菲特有体量和资金成本的优势，如果长时间没有人挖，巴菲特自己找人带着铲子和矿工下矿井挖给大家看，而你连个巴菲特的铲子都没有，怎么去重复他的辉煌呢，尤其价值投资，成长投资已经是一个非常拥挤的赛道了。唔，跑题了，我的意思就是说我认为做长期投资其实比做短期交易还要难，虽然股市风险要小。</p>
+<p>​
+最后当然运气也是其中重要的一部分，市场也会出现兵不厌诈，或者你长期判断正确了，只可惜止损线放的太严，被震荡出场，或者说你恰巧就只有一次没有放止损，就那次恰巧就发生了黑天鹅。不过至少令人欣慰的是，这种黑天鹅你没料到，市场上其他一半的和你同样的人估计也没有料到，因此你不是唯一被埋的那一个，但反过来来讲，如果你知道你同样的队友也没有料到，你已知他们可能其中有一部分人要想出口跑，那你最好跟他们一块儿往出口跑，不要犹豫，不要再等待有没有转机。除非这价格已经迅速跌到一个非常低的位置，那么你可以说算了，我套牢了，但不要就闭眼不看了，选择增持来降低平均持仓成本仍有几率，虽然也要看你背后的标的类型，究竟能不能长期持有？有没有交割日/行权日？未来有没有翻盘的可能？毕竟人在每一步都只能做当下看起来最正确的决定，虽然长期来讲并不一定是最明智的。但谁也预测不了明年对不对。这是一个你有可能会后悔，也有可能会不后悔的决策。但假设你不后悔，也要牢记这次的教训。下次就不一定会照单重演。</p>
 
     </div>
 
@@ -245,7 +262,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%B1%87%E7%BC%96/" rel="tag"># 汇编</a>
+              <a href="/tags/Undefined/" rel="tag"># Undefined</a>
           </div>
 
         
@@ -254,13 +271,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/12/12/8/" rel="prev" title="输出斐波拉契数列前50项">
-      <i class="fa fa-chevron-left"></i> 输出斐波拉契数列前50项
+    <a href="/2024/03/09/18/" rel="prev" title="技术分析究竟有没有用?感觉那么多方法，比如波浪理论，各种指标，太过主观化，运用技术分析是不是不可能成功?">
+      <i class="fa fa-chevron-left"></i> 技术分析究竟有没有用?感觉那么多方法，比如波浪理论，各种指标，太过主观化，运用技术分析是不是不可能成功?
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/12/12/10/" rel="next" title="对二十个数进行排序">
-      对二十个数进行排序 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     

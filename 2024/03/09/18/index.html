@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"skytravelar.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="搬运文章 关于相关问题的回答">
+<meta property="og:type" content="article">
+<meta property="og:title" content="技术分析究竟有没有用?感觉那么多方法，比如波浪理论，各种指标，太过主观化，运用技术分析是不是不可能成功?">
+<meta property="og:url" content="https://skytravelar.github.io/2024/03/09/18/index.html">
+<meta property="og:site_name" content="個人ブログ">
+<meta property="og:description" content="搬运文章 关于相关问题的回答">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-09T03:20:06.000Z">
+<meta property="article:modified_time" content="2024-03-09T03:33:01.137Z">
+<meta property="article:author" content="SkyTravelar">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://skytravelar.github.io/2024/03/09/18/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>技术分析究竟有没有用?感觉那么多方法，比如波浪理论，各种指标，太过主观化，运用技术分析是不是不可能成功? | 個人ブログ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">個人ブログ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2024/03/09/18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SkyTravelar">
+      <meta itemprop="description" content="长夜梦旅有尽时">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="個人ブログ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          技术分析究竟有没有用?感觉那么多方法，比如波浪理论，各种指标，太过主观化，运用技术分析是不是不可能成功?
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-03-09 11:20:06 / 修改时间：11:33:01" itemprop="dateCreated datePublished" datetime="2024-03-09T11:20:06+08:00">2024-03-09</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <div class="post-description">搬运文章 关于相关问题的回答</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="第一次更新">第一次更新</h2>
+<p>​
+支撑位（区间）/阻力位（区间）/整数关卡等一些列技术名词，以下统称为“技术点位”</p>
+<p>​
+总结：其实，与其说是价格会在技术点位遇到反应，不如说是人们相信价格会在技术点位遇到反应，因此在技术点位附近提供了流动性。</p>
+<p>​
+今天来谈技术分析到底有没有用，技术分析是一个比较尴尬的东西，大部分最初进入交易的人，一开始基本上都会去学，无论是主观交易的，还是量化交易的。在课上，尤其是那种面向初学者的短期集训，讲师会展示出许多通过技术点位精确地预测价格顶和底，准确的找到反弹的一些例图，然后大家都十分兴奋“啊，这个有用，啊，交易好简单，啊，我们迅速就能学以致用”，然后一上实盘亏得一塌糊涂。很多人这时迅速就开始骂爹骂娘，说“之前的例子都是讲师特意找出来的，技术分析有用的时候，那是千里挑一的情况，都是curve
+fitting”，然后就把技术分析扔到了垃圾桶。</p>
+<p>​
+那问题来了，为什么一般上来都教技术分析呢？因为技术分析相对客观，对于初学者，你总得交给他们最基础的，比如怎么看蜡烛图（k线），怎么理解均线。那既然都讲到这了，为什么不同时讲讲k线组合，k线图形，macd，布林线？这些技术分析，相对来讲是最容易理解的，是最客观的，你总不能说“我做交易纯粹靠盘感，我觉得在这就该买/卖”吧。尤其是量化交易，更要有数理原则，根据大数定律跑回测来证实策略可行性，即使最开始的模型总是会cherry
+pick/curve fitting，但总需要个起点开始学习不是？</p>
+<p>​
+稍微学学技术分析，然后去实盘看看的就会知道，有时候（30%）好像挺管用，但大多时候（70%）不管用。就算赔率是1比1，照这个胜率来看，赔到底裤都丢了只是个时间问题。那你说技术分析没用吗？不，其实是很有用，几乎所有的大顶和大底，都可以同时精确地匹配到数个技术分析都认同的交汇处，趋势的翻转可以说是“必然发生在技术分析所预测的点位上”。如果你是做量化的，很多人会认同价格是一个有一定规律的随机游走，并不会去考虑价格背后的“人”的因素，做量化就需要把价格模型化/数理化。很多人因此会去优化一些量化指标的参数，争取更好的找到顶和底。很多人会去考虑不同指标的confluence（交汇点），认为一个指标不管用，但如果很多指标都在这里交汇，那么管用的可能性会大一些。很多人可能会去对指标产生的信号做一些filter（筛选），不是指标提供的每一个买/卖都进行实际操作，而是筛选一些准确率高的。这基本上是通过绝对量化的，绝对客观的思路来看待价格，看待市场。毕竟主观是那么的不靠谱，历史回测数据看上去又是那么的真实，而且，无论如何，上实盘前你都得回测不是？但价格的本质究竟是什么呢？是科学的一种吗？</p>
+<p>​
+事实上，决定价格波动的本质是“流动性与市价单的比值”，而相比于随机提供流动性，大家更倾向于在技术点位提供流动性。因此，与其说是价格会在技术点位遇到反应，不如说是人们相信价格会在技术点位遇到反应，因此在技术点位附近提供了流动性。这里的流动性，指的是挂限价单（花时间挂限价单在交易所，以期在未来一个更好的价格进行交易）。价格想要上涨，需要许多人用市价单（当下就买，不论价格）吃掉挂在交易所的限价单，在当下价格中找不到限价单的时候，价格就会上涨，去吃下一个价格的限价单。举个例子，我现在想用市价单买1000股茅台，假设茅台最后一次交易的价格是50元，有800股挂卖单在50元，有600股挂卖单在60元，50元到60元之间没人挂单。那么我会先吃掉800股挂在50元的卖单，之后吃200股60元的卖单，那么现在最后一次成交价就在60元，于是茅台就从50元上涨到了60元。</p>
+<p>​
+现在，我们明白了价格波动的本质是“流动性与市价单的比值”，但什么决定了到底有多少人在这里挂单呢？不出意外，技术分析算出来的价格，会吸引人们向这个位置挂单。假如你是开小卖铺的，一个东西进价47.2，你想赚几块做利润，你会给这个东西标价到多少？是不是49.8？你本来已经想要在50块出售了，而技术分析告诉你，标价49.8会更容易出售，所以你就标价49.8，对不对？之前说到，几乎所有的大顶和大底，都可以同时精确地匹配到数个技术分析都认同的交汇处，这是因为技术分析让价格在这里转向吗？还是许多人本来就觉得这个价格附近可以买/卖了，只是在找一个更容易/更方便交易的价格？至于人们为什么会认为价格附近可以交易，其实我们并不容易得知。哪怕你认为股市是被操纵的，主力们和庄家们决定了价格涨跌，但是就对单一某个主力而言，他们实际也在试探其他主力的意图。</p>
+<p>​
+技术分析，有时候（30%）好像挺管用，但大多时候（70%）不管用，这背后的本质，不是模型的精确性，也不是价格随机游走，而是人们/机器，对当前价格看法通过合力竞价进行的体现。价格几乎会在每一个重要的技术点位获得一定的阻力/支撑，但就价格是否会在这里转向，事实上比想象的更玄学。尤其是遇到突发（定期）新闻的时候，价格好像更容易在技术点位附近发生反应，与其说是数学和科学，不如说是在关键点位以外的流动性都撤单了，那些不重要的价格上的单子，几乎都在慌张和惊恐中，为了防止被市场踩踏而撤回了。只有那些重要技术点位上的单子，一部分出于对技术分析信念，一部分出于在更高时间尺度上对这个新闻的漠视，还会留在交易所等待执行（有很多长期资管，比如养老金或者巴菲特那样的长期投资人，并不会因为几周的价格波动而更改他们原先以年为单位的投资计划）。</p>
+<h2 id="第二次更新">第二次更新</h2>
+<p>​ 提供几方面思考</p>
+<p>​
+1.假设价格是有“庄家”（事实上就算是个股一般也是数个庄家共通使力，一个庄家一般hold不住）操纵的，那么请问你在什么位置操纵可以借力打力？是不是在流动性充足的地方做一个反弹成本会比较低？因为本来就有很多人准备在这里购入，你在这里做反弹，会不会有很多人跟单？如果你是一个挂单者，你看到价格明明已经马上就到你的目标区间了，但是价格突然有反弹的迹象，你是继续等还是追一波？假如你追高，不是不是帮助庄家借力打力？</p>
+<p>​
+这至于流动性为什么会在技术分析区间比较充裕。上面已经提到，不再赘述。</p>
+<p>​
+2.为什么在数个技术分析交汇的地方，反弹/反转的几率会比较大？想一想你用什么技术分析？你相信什么技术分析？别人是不是都跟你相信同样的技术分析？就哪怕是最简单的macd/rsi你至少还有参数可以输入不是？你所相信的技术分析并不代表其他人跟你一样相信。但是有许多技术分析交汇的地方，就代表有许多不同观点，用不同技术分析视角的人，有可能都得出了类似的结论，那么相对于普通的支撑阻力点，这里可能获得的支撑或阻力就以其他地方更多，相当于获得了更多的流动性。</p>
+<p>​ 3.很多人认为技术分析也许是一个magic
+bullet是一个魔法一样的神奇金手指。事实上技术分析基本上都是利用了大数回归定律和统计学的sample分析。那么任何学过统计学的人都知道。你统计出来的结果，只能有一定的趋向性，不代表任何预测的结果。即使是数个技术分析交汇的地方，他也只是增大了在这个位置上反转的可能性。假设在一个随机的地方反转的可能性是50%，在这里也许只是65%，并不像你们可能想象的像电影中的那样。像个预言家一样，那么大的确定性。假如你的胜率和赔率是1:1，那么你不断地在胜率65%的位置交易。就会不断的积累小盈利。但问题是，绝大部分人做不到，胜率赔率1:1。而且如果你不断的赚10%，亏10%，再赚10%，亏10%，你的钱是会不断减少的，有没有听说过震荡损耗这个东西？一个东西先涨20%，再跌20%，它价格不是回到了原点，你是亏了的。</p>
+<p>​
+4.为什么在危机时刻提供流动性是那么的重要？为什么你看现在国际成熟市场一般在危机时刻，央行直接出手干预，提供流动性？因为没有流动性，价格有可能跌到负数。但要在短暂的时间里面提供流动性。就有可能把长期的价格稳住。上面提到了，在危机时刻或大涨大跌的时刻，许多人也许在观望观望的结果就是，你可能会把你挂的单撤单。那么依然在某一个价位挂单子的人。肯定是有某种意图，或者某种思考，虽然这种意图或思考可能是错误的，可能是螳臂挡车。事实上，绝大多数大型订单基本都是冰山订单。但是即使有复数过冰山订单在这里堆积，看起来也是非常多的。哪怕有投行放一个，每一个切片200单的冰山订单。假设有五个投行都在这个位置附近挂了冰山订单，那么这个附近明示的挂单量依旧是可观的，即使隐藏的挂单量并不对外人显现。</p>
+<h2 id="第三次更新">第三次更新</h2>
+<p>​ <strong>一些经典的策略到现在依然有用的本质。</strong></p>
+<p>​
+很多人其实一直也没有搞明白，为什么很多最基础的东西到现在依然有用。就默认“以前有用的，现在也有用”，仿佛是祖宗之法不可变，甚至还有一些人认为具有数字浑然一体的精妙性，是自然界中伟大的数学传奇。<strong>我想说，咱拿数学当科学没问题，但你拿数学当宗教就是另一码事了。</strong></p>
+<p>​
+我这里给大家举一个我经常说的例子，为什么直到现在，在均线和VWAP之类的地方，会有精确到跳的支撑和阻力。有些人可能会发现，如果价格长期偏离均线或者VWAP，当价格久违的碰触到均线的时候，价格往往会有精确到跳级别的阻力与支撑。网上绝大多数文章将其解释为“交易员收到指令，需要将订单以优于均线/VWAP的价格成交”而导致的反抽。当然，这部分的内容说的也不算错误，但是在这里的订单实际由交易员执行的单量比你想象的比例要小很多。反而是量化执行的订单比例更大，大量的量化程序终于是在这里才达到了执行的要求。于是一开始本来不会有精确到跳的阻力与支撑，加入了大量的量化程序后，反而数值比以前更精确了。陷入了一种自我加强的循环，Self
+fulfilling prophecy。</p>
+<p>​
+不是说什么之前有用的，现在依然有用，而是一部分程序员认为交易员在这里会介入而写出了一些量化程序+一部分程序本来就需要降低交易次数，因此只有当价格碰触到均线才会执行+一部分专注于数据挖掘的量化程序，发现了（由于前两种策略都会在这里执行）所以在这里执行成功率较高的特点而加入其中。与其说是交易员的行为导致了精确到跳的均线策略依然有用，反而是大量的量化程序自我锻炼反复加强使得这个策略变得更有用了。这个道理很简单，一想就明白，但很多人从来没有考虑过这些事情。这个例子当中，虽然结果是相同的，但过程是不同的。我只是想强调大家不要简单的就说某个东西失效了，某个东西还有效，更不要归结于什么天意和数字的精妙性，争取想一想背后失效和有效的道理，不要人云亦云。但显然很多人处于一知半解的“这个东西它有用所以用”的死循环。</p>
+<p>​
+因此我一直都在建议主观和量化应该结合，并且推荐新手以量化的视角做主观。</p>
+<blockquote>
+<p>咱们先理解一个大前提。就是什么样的策略才是一个好的主观策略？你在什么样的情况才应该选择量化？你的主观到底在什么情况下才算是优势？下面是我的一家之言，你要是不认同也没问题。
+在你的系统和策略已经高度量化的基础上，你利用你对盘面的整体了解，对市场大环境的整体熟悉度，以及大量的情景训练，总结出的主观经验。利用你的主观经验为你高度量化的策略系统去伪存真，并利用一些市场微形态寻求更好的出入场时机的时候，你的主观交易才是一个优势。
+什么意思？意思是说你在做主观的时候，你的交易思路应该是已经基于一个相当量化的多因子决策系统，而你主观就主观主要在对于根据经验对不同因子比重的动态分配。既不是根据盘感的拍脑门，也不是根据一些技术分析的红灯停，绿灯行一样的机械操作，在这种基础上，你的主观才是优势。
+很多人喜欢在主观上找经验，然后把这些东西尽可能的量化，去跑量化程序来回测，或者直接就跑量化来挣钱了。但假设你的量化思路真的是基于你的主观经验，往往意味着你的量化程序跑的不如你用人脑判断那么仔细，相当于你的量化程序是你主观经验的弱化版。除非是你的主观经验并不存在，只是单纯的基于技术分析的红灯停，绿灯行。然后你希望让人脑的红灯停，绿灯行变成机器识别的红灯停，绿灯行。如果你的主观思路有很大程度上是基于对于大盘整体环境理解，对于市场当前状态的理解，对于突发新闻的理解，和对于市场反常态的理解，哪怕是出于“既视感”的盘感。这样的主观哪怕搞出来量化，这个量化也是他们主观思路的弱化。
+因此我认为用主观思路去做量化是不那么靠谱的。熟悉我的人知道，这是我从量化私募走向Prop交易并准备一路主观到底的主要原因。
+我认为反倒是你应该尽可能的从量化上找思路，然后把这些量化思路运用在主观经验上，以量化算出来的因子，尤其是那些你主观可能并不会意识到的有关联性的因子，用量化求得的样本集，让程序算出的高胜率或高赔率的交易区间，然后你在这个区间根据你对市场的大时代背景，根据盘面当时的运行情况。在量化系统出的信号之中，去伪存真，利用人脑在使用订单流分析，微结构等复杂决策方面的主观优势来增强你的进出场位置以及加减仓时机。这样我认为你作为人的主观灵活性才能被充分发挥出来。主观和量化的结合才能够相互提升，而不是相互干扰。正如我之前所说的，你把主观拿去做量化，量化是你主观的弱化。你拿量化做主观。主观是你量化的强化。
+上述内容的前提是你要有一套以多因子为基础的，本身已经高度量化思路在其中作为铺垫。你用量化的可回测性，作为你主观判断的基石。这样才能结合量化的稳定性，和主观的灵活性。单凭经验是不靠谱的，尤其是你在其中很难分清实力和运气的关系的时候，人们普遍的会认为量化会更靠谱。但是如果你有以量化的思路做主观，你会发现这个问题就迎刃而解了。
+我随便举一个最最简单的例子，方便大家理解。假如说你的量化系统主要是基于macd，那么就会涉及到敏感度越低，你出入场时机就越晚。敏感度越高，假信号就越多，这样一个无解死循环。有人可能会说，那我多加一些其他的判断因素。比如说根据atr调整macd的敏感度。通过ema来过滤一些macd的假反转。甚至根据成交量和rsi背离来进一步过率信号。以至于在其之上发展出动态多因子择时，因子权重动态平衡，波动率调节加减仓，watermark形式跟踪出场。但其实都不如你直接在macd出信号的时候看一眼，在macd和背离同时出现的时候看两眼，在动能和均线都符合预期的时候看三眼，然后你手动利用订单流分子挑一个合适的出入场时机，在明显遇到下一个阻力时直接放在最近的支撑位来的更稳定。当然你也可以不信我说的，或者认为我讲的不对。因为这只是我一个人一家之言。但如果你觉得我讲的有道理，不如听我一言，换一个角度看量化和主观之间的关系。
+而且我强调一点，上面提到的你量化的视角做主观最优的解法并不是你用眼睛去看背离，用脑子去想atr和rsi，而是量化系统已经出了信号，你看一眼线，你的量化系统就直接告诉你条件abd已经满足，但c不满足，你再主观判断一下有没有必要等c也满足，或者哪怕是abcd都满足，但是盘面走势不符合你的“预期”因此依旧按兵不动。并不是说你用脑子去跑量化运算。尽可能的还是要科技改变生活，而不是钻木取火，否则你累了一天也就只能关注一两个市场，不是吗？利用量化解放双手，释放脑力的优势并不需阉割不是吗。
+当然，事实上是我说的这些东西大多数人可能并不适用，因为大多数人可能就想要一个红灯停，绿灯行的系统。也不想费脑子，不想费精力学习，更不想就光区间突破，看上几百个例子，花上几百个小时高压练习。如果你不知道我在说什么，我有一篇文章叫做机构是怎样训练交易员和操盘手的文章，感兴趣的可以看一下。不过事实也是如此，人都是趋向于懒惰的。没有在机构中那样一个高压的环境，那样一个人人比拼宛如高考的激烈竞争，你可能真的也坐不下来，看几百个小时的实盘录像。但如果你想知道你究竟还差了点什么？或者哪方面可以更加精进？不如参考一下我提供的这条思路，你可能从未想过，但它其实存在。</p>
+</blockquote>
+<p>​
+上述我还提到了，你要有一个大概的盘感，能够判断出市场走势和预期走势之间的差别是不是符合要求的。不是在任何盘面达到要求之后都做相同的操作，你应该对于实际情况有一定的主观取舍，这样你才是利用了主观对于处理复杂信息的优势增强了你量化的精准度。我其中在文章<strong>交易员的脑回路——在趋势面前判断市场究竟是否“合理”</strong>里有详细展开讲过，感兴趣的可以看一眼。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/03/09/17/" rel="prev" title="以史为鉴，复盘解读2020年3月的各大类市场动荡（短线视角）">
+      <i class="fa fa-chevron-left"></i> 以史为鉴，复盘解读2020年3月的各大类市场动荡（短线视角）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/03/09/19/" rel="next" title="交易员的脑回路——在趋势面前判断市场究竟是否“合理”">
+      交易员的脑回路——在趋势面前判断市场究竟是否“合理” <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%9B%B4%E6%96%B0"><span class="nav-number">1.</span> <span class="nav-text">第一次更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%9B%B4%E6%96%B0"><span class="nav-number">2.</span> <span class="nav-text">第二次更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%9B%B4%E6%96%B0"><span class="nav-number">3.</span> <span class="nav-text">第三次更新</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SkyTravelar"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">SkyTravelar</p>
+  <div class="site-description" itemprop="description">长夜梦旅有尽时</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SkyTravelar" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SkyTravelar" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.shilinli.com/" title="http:&#x2F;&#x2F;www.shilinli.com&#x2F;" rel="noopener" target="_blank">indexss's</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SkyTravelar</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
