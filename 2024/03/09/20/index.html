@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"skytravelar.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="搬运文章 关于相关问题的回答">
+<meta property="og:type" content="article">
+<meta property="og:title" content="胜率和盈亏比，你更看重哪一个？">
+<meta property="og:url" content="https://skytravelar.github.io/2024/03/09/20/index.html">
+<meta property="og:site_name" content="個人ブログ">
+<meta property="og:description" content="搬运文章 关于相关问题的回答">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-09T03:43:20.000Z">
+<meta property="article:modified_time" content="2024-03-09T03:46:27.633Z">
+<meta property="article:author" content="SkyTravelar">
+<meta property="article:tag" content="Undefined">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://skytravelar.github.io/2024/03/09/20/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>胜率和盈亏比，你更看重哪一个？ | 個人ブログ</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">個人ブログ</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2024/03/09/20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SkyTravelar">
+      <meta itemprop="description" content="长夜梦旅有尽时">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="個人ブログ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          胜率和盈亏比，你更看重哪一个？
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-03-09 11:43:20 / 修改时间：11:46:27" itemprop="dateCreated datePublished" datetime="2024-03-09T11:43:20+08:00">2024-03-09</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <div class="post-description">搬运文章 关于相关问题的回答</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>我们之所以认为交易的赔率比胜率重要，是因为如果做主观，几乎一共就两种不同的胜率。要么你认为某个机遇有40%-50%的概率能成，要么你认为某个机遇有70%-80%的概率能成，也就这样了【注意，这里说的都是入场时的初始概率，随着你入场后得到越来越多的信息，你对概率的判断是要有更新的】。特别精确的胜率在主观交易里对决策的意义不大。因为你要做的是市场自然展现给你的机遇，而不是你强行从盘面中找出来的机遇。市场展现给你什么样的胜率和赔率，你就做什么样的胜率和赔率。如果你说你算出来有一个30%胜率的机遇（先知道胜率），但是可能有10倍赔率的机遇（然后你再算出了一个赔率），以为值得一做。但我认为你这个10倍很可能是硬生生找（编）出来的赔率，你是因为知道这个策略胜率低，强行要求高胜率，你很可能是希望市场能走到哪里（或者市场有较低几率走到哪里），而不是市场展现给你的有较高概率会到达的实际赔率。</p>
+<p>如果某个策略胜率低也能挣钱，那可能是最后统计的结果，但是你在做每一次交易的时候，<strong>要争取的依旧是高胜率+高赔率</strong>（而不是争取只能低胜率高赔率，或者高胜率低赔率）。因此至少有大概一半概率能成，才有必要去考虑，这才可以说是市场展现给你的机遇。不管结果最终是可以是低胜率高赔率，或者高胜率低赔率，但那都是结果，而不是你要争取的目标。因此做主观胜率几乎就只有两种，要么你认为某个机遇有40%-50%成的概率能成，要么你认为某个机遇有70%-80%成的概率能成。</p>
+<p>如果你想做高胜率策略，这当然是可以的（我也建议新手采取高胜率策略），但是在当下的市场环境里，不成熟的交易员运用高胜率策略大多意味着赢一次赚不了多少，但亏一次有可能会亏很多（比如你错一次可能会亏赢四次才赚出来的钱）。如果你看某位交易员（HFT和量化不算）做高胜率策略，胜率确实很高赚的也不少，那概率是他对盘面的认知和把控比较好，而不是他采取了一个多么神奇的高胜率策略。他能看出来这是一个机会，而我可能看不出来这有什么机会。他可能认为这里有风险，而我不认为这里有风险。做高胜率策略绝对是看水平的，反而是做高赔率策略，相对来讲对市场理解不用那么充分（尤其是价格变动的细节的把控），仅分析“价格走到哪里前都不应该遇到特别巨大的阻力”也经常能够吃到饱。</p>
+<p>言归正传，既然“要么你认为某个机遇有40%-50%的概率能成，要么你认为某个机遇有70%-80%的概率能成”【这里说的都是入场时的初始概率】，那我们怎么知道某个机遇好与不好，某个机遇是否要重仓？因此需要提前预估赔率。同样都是四五成概率能行的机遇但是赔率高，你就可以稍微加一点仓位。如果出现七八成概率能成，同时还有高赔率，那你就应该重仓。但需要得强调这个预估是建立在市场展现给你的走势和你深刻的分析的基础上。但如果你是“提前已知这个机遇胜率不高，所以我要强行找一个更高的赔率”，那几乎没有意义。</p>
+<p><strong>如何正确计算赔率？</strong>我之前有写过文章，大致你可以理解为当价格走到哪里，你就能够被深刻的证实你判断错了的位置来放你的止损，这是你盈亏比中的“亏”。而你通过市场走势，动能，形态等一系列因素分析到“假设价格发生运动，价格可能一直运动到x处，都不会遇到太多的阻力”那么这个位置x就是你的潜在盈利点（这是你盈亏比中的“赢”），你最好通过这种方式来计算你的盈亏比。当然，如果你的入场点不是单一的某个或某两个点，而是区间分布来scaling
+out，那确实会麻烦一些，但这也是个熟能生巧的过程。如果你出场也大量分布在不同的点（且点与点之间距离相差较远），那么我建议你将不同的出场点视为不同的交易。你大概可以理解为入场是一起入的，但是出场每一个都是单独的交易。（所谓单独的交易就是假设你没有其他同向持仓，这就是你当下唯一的交易。）当然，你不需要精准的算出你的盈亏比，你大概应该能知道“这个机遇比今天早些时候的几个类似胜率的其他机遇看上去盈亏比要更好，所以没准仓位可以重一点”就够了。</p>
+<p>但假如赔率类似，那必然是胜率高的重仓，胜率低的轻仓。两者并不冲突，只是判断胜率相对来讲比判断赔率更难一些，所以我这里强调的是如果你水平一般，那么注重赔率比较简单一点，所以“赔率比胜率重要”。</p>
+<hr />
+<p>这篇文章我不想写的太长，因为每月都会有四五位读者跟我说我的文章太长了，那我就短点写。</p>
+<p>因为经常有人会向我咨询一些跟交易相关的比较基础的问题。久而久之，我就发现很多散户（尤其是没有经过机构系统训练的野生散户）都会出现同样的倾向性。他们的思维方式和进机构里系统训练出来的有很大不同。【这里我想强调的是，并不是说散户的思路是有问题的，如果你能赚到钱，什么思路都是好的。只是说自己钻研的散户与经过机构训练的人的思路确实有很大不同】。</p>
+<p>大多数散户实际上是在“找一个精确的‘优势价格’入场，然后跟着盘面随波逐流。”我举个例子，很多散户可能利用一大套各种技术分析手段算出一个入场价格，等入场后，就以移动止损的方式让市场带着自己走。很多的散户策略真的就是这样的，他们将大量的时间和精力，不断的去尝试各种不同的技术分析手段，去找那个“高胜率的优势价格”，希望找到那个像金手指一样的入场点。</p>
+<p>但如果是经过系统性训练的人，他们的思路大概不是这样的。至少在我一开始做交易的时候，我的教官就非常明确的告诉我，最重要的其实是盈亏比。并不是我们不追求胜率，而是胜率这个东西它不太稳定。你说一个65%胜率的策略，也有可能连续四五次都失败。但如果你有一个好的盈亏比，胜率不到50%又何妨？（这里额外说一个很有意思的现象，很多人认为胜率在70%才是一个高胜率策略，胜率65%就不是一个高胜率的策略。事实上胜率65%就已经是2/3的胜率了，但人们潜意识的认为70%就接近90%乃至100%，65%就接近于50%，这可能是因为考试中60分才及格，给人留下了60分是刚刚超过一半的感觉。但事实上是很多即使在做高胜率策略的交易员，胜率也就是在65%左右。当然70%以上的也有，具体就看你的资金量和具体的盘面。一般通用性比较强的策略，即使是高胜率的，也就是65%胜率。要有一个交易员说他的胜率高达80%，那大概率是因为他对盘面的把控比较好，而不是说这个策略有多么神奇。）</p>
+<p>当然并不是说自己在家研究的野生小散就不考虑盈亏比，但他们对于盈亏比的概念一般是在“我愿意亏多少钱来止损”为主要目的。而我们考虑盈亏比，一般是在考虑在当前盘面能赚到多少钱。</p>
+<p>先说赢亏比中赢的部分，我们ideally希望入场之后价格可以自由的奔跑一段时间，有点像是“让子弹飞一会”，不要马上就让子弹碰到墙。我们在做规划的时候，尽量避开那种刚入场马上就会碰到一些坎坷，马上就碰到较大的阻力点，或者即使能发展成趋势，但一路上都会遇到阻力点的走势。然后我们大概的去预估，价格有可能会在哪里转向？因为就算是趋势，价格也不可能无限的向前推进。哪怕是遇到一个天大的利好，到一定程度它也是该回调的。但具体价格在哪里转向我们并不知道，但是在碰触重大的支撑或者阻力点的时候，你就可以适当减仓。（当然第一次碰触重要点位的时候，你可以让价格跑一跑看他有没有突破的迹象。但是如果短时间没有突破的迹象，你就可以减仓，注意这里是减仓，至于要不要出来还两说。）这是我们说的，赢的部分。</p>
+<p>毕竟市场的走势是高度不确定的，在市场真正走出头肩底之前，你永远也不知道他会是一个头肩底。在市场正经出现底部之前，你也不会知道他就是今天的底，你看订单流，看各种分析方式都没有办法确定价格会走到哪里，只能说推测出哪里的阻力可能会比较大一些，于是你用订单流等一些手段帮你更好的去辨识支撑与阻力的强度。至于如何判断价格有可能会在哪里遇到支撑与主力，请看我之前写的文章：<a
+href="https://skytravelar.github.io/2024/03/09/18/">技术分析究竟有没有用?感觉那么多方法，比如波浪理论，各种指标，太过主观化，运用技术分析是不是不可能成功?</a>。你可以先接着往下读，等读完这篇文章之后回来翻翻这篇文章。本质是说流动性决定了价格会遇到多少支撑与阻力，流动性决定了价格在一段趋势中会出现多少小的震荡区间。</p>
+<p>盈亏比中亏的部分主要是在说不能够单纯的担心自己会在上面损失多少钱，不能说“我就愿意在上面risk
+300元。那我就把止损放在这里。”反而，你应该考虑的是如果价格走到哪里，我就能够被非常清晰的证实我的判断是错的。因为你并不一定总能抓到好的入场点，比如你想做一个突破的策略，你在关键点位之前入场，准备做突破关键点位的交易。但你可能刚入场，价格就往回打，导致你刚一进去就是浮亏。这时候很多人可能就迅速出来吃个小亏损，（注意，我并不是说这样做不行。但如果你在这里选择了小亏出场，等价格再有突破迹象的时候，你就一定要把仓位加回去。但事实上大部分人就直接观望了，新手很难有加回去的，尤其是当价格反复在关键点位之前震荡。有些人说给自己三次试错机会，如果都是小亏就不看了。）</p>
+<p>一个更好的做法是你把你的止损放在一个“如果价格到这里，我就肯定是错了”的地方。毕竟你三次小亏和一次中亏哪个亏的更多，其实真的不好说。有些人问这有什么意义，其实能帮你拿住单子就是意义。有很多交易，其实事后看来他依然是能够成功的。但你可能当时出于各种原因一拿不住出来了，就导致你不仅拿了个小亏，之后大的你也没吃到。你三次小亏失败之后就可能彻底放弃，但你一次中亏之后还有可能进行再战，这就是心态的区别。而你再战的这一次没准就是开张吃三年的机会。另外，一些微小的波动有的时候可能也不需要太多的细读。事实上你不需要看的那么仔细，人的精力注意力都是有限的，也不可能一直死死盯着。</p>
+<p>按照我上述提的止盈和止损的位置，你再算盈亏比。如果盈亏比3-4或者更高，那就完全值得做。有些人可能觉得把止损的位置放到证明自己错了的地方，那风险太大了，不愿意承担那么大的价格波动。那我劝你就在仓位上想想办法。一般我们认为正确的仓位设计是，“你对这个交易的信心取决了你该放多大的仓位”。你觉得这个交易可行性高，你就应该重仓，你觉得这个交易可能性不好说，那你就应该轻仓。你在价格演绎的过程中越发觉得这个交易顺眼，你就应该加仓。但如果你觉得判断可行性这个事太主观了，你也可以根据“止损距离大的交易轻仓，止损距离小的重仓”，这样你每次交易你risk的金额应该是差不多的。（事实上我们也不是不采用这种办法，只是在采用这种办法的时候，一般都是市场波动性比较高的时候。因为在市场高波动性的情况下，最差的结果就是被反复止损出场，但是如果这样按照可行性来确定交易仓位，可能每次止损都要放到50-60ticks开外，那确实风险还是很高的。因此不如低仓位，但宽止损区间。）</p>
+<p><strong>之所以强调盈亏比，是因为你对的时候不一定能确保入场，入场了也不一定能完全吃到想要的区间，但错的时候一定会100%入场。如果你对的时候不一定能按3倍赔率出场而总是见好就收，那错的时候就直接亏，久而久之就和市场说byebye了。</strong></p>
+<p>那这样算出的盈亏比有什么意义？其实正经做交易，你的入场位置很难完美。比如你知道某一个交易的盈亏比是5，这是一个大好的机遇。我想来这里做突破或者反转。但是价格到那附近的时候，突然一个大单砸下来，价格嗖的一下就过去了，你根本没反应过来。现在问题来了，要不要追高？如果你再重新计算盈亏比之后发现盈亏比依然在3以上，那为什么不追高？这依然是一个好机会，对不对？价格嗖的一下就过去了，代表了其强劲的动能，然后你依然有一个不错的盈亏比，反而证实了这是一个不可多得的好机会。很多人说追高火葬场，但这种情况你就应该勇于追高。</p>
+<p>有些人用一大套的技术分析方法算的一溜八开，算了一个特别精确的价格。然后止损就是10
+ticks的固定止损，止盈就是ema移动止盈。<strong>其实不如一个不那么精确的入场点，但是你能够根据盘面大致推算出这个价格有可能走到哪里都不会遇到太多的反击。把止损放到一个会证实自己的思路错了的地方。然后争取在你的止损附近找一个机会入场或者加仓（这种比较适合比如在突破之前，价格在你想要做突破点位附近形成了小的震荡区间，并在这里积蓄动能，这样你就可以尽可能在这个小区间中以更加优势的价格入场。并不是总能有这样的机会，有时你必须得在接近突破/翻转的时候hit进去。但是争取在更好的位置入场，无论如何是一个好的优化。）</strong>之后就一直拿着（除非从订单流或者微形态上读出明显不妙的迹象。这个东西是需要变通的，不是一成不变的。子弹打过来也不是说你就在那站着，该找掩体还是要躲的。）前一种交易方式属于要找到好的价格，而后一种是要做一个好的交易。</p>
+<p><strong>事实就是价格可能反复碰触好几次关键点位，也没能成功突破/反转（相当于短时间内没有证实你的判断是正确的，但也没有证明你是错误的。）如果你知道这是一个较高的盈亏比的好机会，你就能够比较心安的拿住订单。拿住订单就可以在价格没看出要突破迹象，却实实在在的突破了的时候，确保你不会错过一个好的交易。尤其是那种尾盘异动，盯了一天都没能突破，一直在看不到头脑的区间震荡，但最后20分钟你一不留神的时候就创了新高，你心里也不甘。又或者价格在长期来看是趋势，但在发展的过程中是一波接一波的，第一波和第二波可能相隔差40分钟。在这40分钟当中，你可以出来，你也可以拿住。如果你是小仓位好掉头，那么一般也不用考虑这么多。但是如果你一旦发大财了，成为千万级的资金，你就基本上只能做swing类的了，否则你出来就是砸盘。提前学习一下这类交易是怎么做的，也不是什么坏事。</strong></p>
+<p>我还得强调我上面提到的这种“以盈亏比作为是否值得一做的判断，以流动性作为规划依据”的做法并不适合所有人。如果你以其他的方式进行出入场并且赚到了钱，那当然是好事。但是我希望在这里点拨一下，小散自己钻研和一个接受过机构训练的交易员，在处理上是有哪些思路的不同之处。因为你的资金量一旦放大到一定程度，你很大程度上就只能以我提到的这类思考方式来做了，虽然当你能够影响市场后，你的手段是不一样的，但是思路是没变的。</p>
+<p>最后还得反复说“不亏就是赚，亏钱的概率是很大的。大部分人就是没坚持下来的，千万不要光看网上一些大牛人都日赚斗金，行情没赶上也没关系，不亏就行”，别总想些“一鸣惊人”的。</p>
+<p>所以希望咨询我的人不要拿一个我大概率会“推荐你不要那么做的策略”再来问我了，谢谢，我解释的也挺累的了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Undefined/" rel="tag"># Undefined</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/03/09/19/" rel="prev" title="交易员的脑回路——在趋势面前判断市场究竟是否“合理”">
+      <i class="fa fa-chevron-left"></i> 交易员的脑回路——在趋势面前判断市场究竟是否“合理”
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SkyTravelar"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">SkyTravelar</p>
+  <div class="site-description" itemprop="description">长夜梦旅有尽时</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SkyTravelar" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SkyTravelar" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.shilinli.com/" title="http:&#x2F;&#x2F;www.shilinli.com&#x2F;" rel="noopener" target="_blank">indexss's</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SkyTravelar</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
