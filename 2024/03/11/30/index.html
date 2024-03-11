@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"skytravelar.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="汇编 用递归方法计算菲波拉列级数前20位 以十进制形式输出">
+  <meta name="description" content="搬运文章">
 <meta property="og:type" content="article">
-<meta property="og:title" content="输出斐波拉契数列前20项">
-<meta property="og:url" content="https://skytravelar.github.io/2022/12/12/9/index.html">
+<meta property="og:title" content="为什么你不应该轻易移动止损线，即使你已经有所盈利">
+<meta property="og:url" content="https://skytravelar.github.io/2024/03/11/30/index.html">
 <meta property="og:site_name" content="個人ブログ">
-<meta property="og:description" content="汇编 用递归方法计算菲波拉列级数前20位 以十进制形式输出">
+<meta property="og:description" content="搬运文章">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-12T05:40:02.000Z">
-<meta property="article:modified_time" content="2022-12-12T05:58:07.923Z">
+<meta property="article:published_time" content="2024-03-11T13:22:07.000Z">
+<meta property="article:modified_time" content="2024-03-11T13:24:15.260Z">
 <meta property="article:author" content="SkyTravelar">
-<meta property="article:tag" content="汇编">
+<meta property="article:tag" content="Undefined">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://skytravelar.github.io/2022/12/12/9/">
+<link rel="canonical" href="https://skytravelar.github.io/2024/03/11/30/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>输出斐波拉契数列前20项 | 個人ブログ</title>
+  <title>为什么你不应该轻易移动止损线，即使你已经有所盈利 | 個人ブログ</title>
   
 
 
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2022/12/12/9/">
+    <link itemprop="mainEntityOfPage" href="https://skytravelar.github.io/2024/03/11/30/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          输出斐波拉契数列前20项
+          为什么你不应该轻易移动止损线，即使你已经有所盈利
         </h1>
 
         <div class="post-meta">
@@ -213,7 +213,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-12-12 13:40:02 / 修改时间：13:58:07" itemprop="dateCreated datePublished" datetime="2022-12-12T13:40:02+08:00">2022-12-12</time>
+              <time title="创建时间：2024-03-11 21:22:07 / 修改时间：21:24:15" itemprop="dateCreated datePublished" datetime="2024-03-11T21:22:07+08:00">2024-03-11</time>
             </span>
 
           
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
-            <div class="post-description">汇编 用递归方法计算菲波拉列级数前20位 以十进制形式输出</div>
+            <div class="post-description">搬运文章</div>
 
         </div>
       </header>
@@ -235,7 +235,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">DATAS SEGMENT</span><br><span class="line"> VAL    DW 20 DUP(0)</span><br><span class="line">DATAS ENDS</span><br><span class="line">STACKS SEGMENT</span><br><span class="line"> DW 30 DUP(0)</span><br><span class="line">STACKS ENDS</span><br><span class="line">CODES SEGMENT</span><br><span class="line">    ASSUME CS:CODES,DS:DATAS,SS:DATAS</span><br><span class="line">START:</span><br><span class="line">    MOV AX,DATAS</span><br><span class="line">    MOV DS,AX</span><br><span class="line">    MOV AX,STACKS</span><br><span class="line">    MOV SS,AX</span><br><span class="line">    MOV DI,0</span><br><span class="line">    MOV AX,1</span><br><span class="line">    MOV DX,1</span><br><span class="line">    JMP FIBO</span><br><span class="line">    </span><br><span class="line">FIBO:   MOV VAL[DI],AX</span><br><span class="line">		ADD DI,2</span><br><span class="line">		MOV VAL[DI],DX</span><br><span class="line">		ADD DI,2</span><br><span class="line">		ADD AX,DX</span><br><span class="line">		ADD DX,AX</span><br><span class="line">		CMP DI,40</span><br><span class="line">		JAE  BACK</span><br><span class="line">		CALL FIBO</span><br><span class="line">		RET</span><br><span class="line">	  </span><br><span class="line">BACK:   </span><br><span class="line">  MOV DI,0</span><br><span class="line">   MOV CX,20</span><br><span class="line">   MOV DX,0</span><br><span class="line">   </span><br><span class="line">L1:    </span><br><span class="line">        MOV AX,VAL[DI]</span><br><span class="line">  ADD DI,2</span><br><span class="line">  CMP AX,1000</span><br><span class="line">  JNB P1</span><br><span class="line">  CMP AX,100</span><br><span class="line">  JNB P2</span><br><span class="line">  CMP AX,10</span><br><span class="line">  JNB P3</span><br><span class="line">  CMP AX,1</span><br><span class="line">  JNB P4</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">P1:  MOV BX,1000</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  MOV DX,0</span><br><span class="line">  </span><br><span class="line">P2:  MOV BX,100</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  MOV DX,0</span><br><span class="line">  </span><br><span class="line">P3:     MOV BX,10</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  MOV DX,0</span><br><span class="line">  </span><br><span class="line">P4:    </span><br><span class="line">        MOV BX,1</span><br><span class="line">  DIV BX</span><br><span class="line">  PUSH DX</span><br><span class="line">  MOV DX,AX</span><br><span class="line">  ADD DL,30H</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  POP AX</span><br><span class="line">  </span><br><span class="line">  MOV DL,32</span><br><span class="line">  MOV AH,2H</span><br><span class="line">  INT 21H</span><br><span class="line">  MOV DX,0</span><br><span class="line">  LOOP L1</span><br><span class="line">  </span><br><span class="line">  MOV AX,4C00H</span><br><span class="line">  INT 21H</span><br><span class="line">CODES ENDS</span><br><span class="line">    END START</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>不知道大家有没有听过“三门问题”，不清楚的可以上网查一查。我这里提供一个简单的版本，假设你参加一个游戏节目，在游戏当中你面前有三道门，其中有一个门里装着100万美金，另外两个门里什么也没有。你可以在现在选择一扇门（假设选门1），等你选完了之后，主持人会在另外两个门（门2，门3）里打开一个错误的门（假设门3里面是空的），那么现在主持人问你，你是否要更换你所选的门（可以从门1换成门2）？</p>
+<p>很有意思的是大部分人都选择不换。这些人可能是这么想的，原先我这1/3的概率会赢，当主持人打开了一个错误的门，我现在是1/2的概率会赢。那么不管我换不换，我的胜率都是1/2那我不如坚持原来的选项，万一要是原先的对了我换错了，那么我心里会受到极大的打击。如果我一开始选择的门就是错的，我坚持不换，那么另一扇门里的钱就是没有赶上的火车（每天有那么多辆从站台出发到火车但是我并不会为没赶上这些车而惋惜，因为我一开始也没有想搭上这些车）因此，出于损失厌恶的原理，很多人选择不换</p>
+<p>然而从概率上来讲，如果你坚持不换，你的胜率是1/3，如果你坚持每次都换，你的胜率是2/3。然而，很多人对此不理解，我这里简单讲一个关于“集合”的问题。</p>
+<p>一开始的时候，你不管选哪扇门，你的胜率都是1/3。也就是说你没选的那两个扇门的胜率的合集是2/3。主持人会在你选完之后会在那个2/3的集合里面排除一个选项，所以排除了三分之一的错误项。因此如果你坚持不换，那么你是在1/3的胜率的集合里面，如果你坚持换，那么你就跳到了2/3胜率的集合里面。如果你从概率的集合的角度来考虑，你应该每次都坚持更换另一扇门而跳到胜率更大的合集。</p>
+<p>那么你可能会问，我讲这些东西有什么意义呢？这种集合概率不同导致认知误区的例子在生活中很常见，在交易中就更常见了。如果不知道我说的什么意思，可以参考我之前写的一篇关于“赌博和交易有什么区别的文章”，里面大量提到概率问题，尤其是在量化领域，基本就是纯概率。</p>
+<p><strong><a
+href="https://skytravelar.github.io/2024/03/11/22/">论交易与赌博的区别</a></strong></p>
+<p>有很多人在做量化和主观时候，会有一种落袋为安的心理，于是有一种策略叫做free
+trade的策略。本质上是假设你已经有了一定的盈利（假设做多），那么你应该把你的止损线上移放到盈亏平衡的地方（假设你之前止损线在更下方的地方），这样假设未来价格下跌，那么你最多不亏不赚平着出来。但如果价格上涨，你则可以跟着吃肉，这样相当于你获得了一次“免费”的交易。</p>
+<p>但如果你理解上面关于集合的问题（三门问题），你会发现这样的交易思路是完全错误的。假设你已知你的胜率是50%（50%为了简便计算，如果你是主观交易，你的胜率可能不清楚，这里假设你已经知道你的长期胜率。但如果你是量化交易，你的胜率应该在回测当中有相当多的体现，这里不赘述。）那么假设你当前已经有浮盈，大概率是你在正确的那50%的概率上。假设这时候你由于损失厌恶的原理，把你的止损线上移到你入场点的地方，由于价格可能会区间波动，你相当于是增大了你平仓出局的几率。于是你本来有50%的胜率，你在移动止损线之后，你的胜率反而不足50%了。这就像上面的三门问题，如果你不移动止损线你还在原来的胜率的集合里面，如果你移动了止损线，你总体的胜率不是变高了，而是变低了。你看上去将止损线上移入场点附近的位置，好像是降低了风险，但由于你同时降低了总体胜率（从一个集合切换到另一个集合）因此你实际有多大风险，反而变成了未知。</p>
+<p>如果你以前的策略一直以来就是在应用Free
+trade的基础上获得了50%的胜率，那么依照原策略执行即可。但如果你获得的50%的胜率是在不依靠free
+trade策略的基础上获得的，那么你则不应该仅仅因为损失厌恶的原理而移动你的止损线。应该与以往的策略保持一贯性才能获得你在回测当中的基础胜率，否则你每次在没有回测的情况下变更一个参数都会陷入到新的概率集合的问题。</p>
+<p>那么问题来了，你在什么时候应该移动你的止损线呢？答案是“在认为当下走势应该做反向交易但又不确定的时候”。当你根据新的价格走势判断当下应该做反向交易（做空），但又不具备确定条件的时候你应该适当更改你的止损线（当然这里更改你的止损线不是指的你把止损放到不赔不赚的地方，而是放到一个适当的盈利的地方，这里牵扯到一个入场的频率与至于你是否在相同时间区间下是否get
+paid的问题）</p>
+<p>我不建议当你稍微有盈利的时候，就将你的止损拉平到入场的位置来获得一个Free
+trade（免费的交易）。既然你的上面已经大概算过这个交易的潜在赔率，你迅速将止损拉到Free
+trade的位置只是增大了出场的概率而已。如果你没有较低的交易成本，那么我建议你与其选择三次小亏，不如选择一次中亏。当然，如果你觉得还是反复小亏在心理上比较舒服，你怎么舒服怎么来就行。只是许多机构是像我说的这样来教育交易员的，毕竟如果你的仓位很小，那么你小亏就小亏，但等你的仓位大到一定程度的时候，我提到的这种入场思路是必须学的。</p>
+<p>但有一位读者就以为我的意思是一直不挪动止损线（或移动止盈线），以为我的意思是“要么亏损出场，要么赢钱之后做反向”。这当然不是我想讲的意思，只是因为价格经常是呈阶段性发展的，当价格向下一个阶段发展时，你就可以把你的止损放在上一个阶段中的合理位置。你当然是要移动你的止盈止损线的，只是不是进场之后马上就移动罢了。一般移动止盈止损线往往是你确实不知道当下是不是应该出来，但是你已经有不少浮盈所以你想保护你的盈利。毕竟如果你非常明确的知道当下应该出来了，直接出来就得了。</p>
+<p><strong>价格发展很有可能一开始比较清晰，后来越来越不清晰。直到你能在当下找到同样多的理由来做多和做空，你把你的止盈止损拉到一个可以保护你盈利的位置上（一般是上一个价格发展阶段中，买方/卖方占显然据主动或者有技术分析求得的具有保护作用的位置）【最好是放在如果价格突破x，那么市场的风格/劲头/动能明显的切换了的位置，这代表了如果价格走到这里，你入场的理由就已经完全不存在了。如果你找不到合适的维持你仓位的理由，那这个时候你就可以止盈出来。这和我上面一直说“你应该把止损放在一个，‘如果价格走到这里，你就能够被证实你是错误的位置’”是异曲同工的。】</strong></p>
+<p>如果你入场之后，价格马上就实打实的进入下一个发展阶段，那么你移动你的止损线也没有问题。但不要说你开始有一定盈利了，就移动你的止损线<strong>（你不应该单纯因为盈利的数字而移动了止损线，你应该判断价格是否已经发展到下一个阶段了）</strong>。当然，如果你要是做量化，那么量化程序可能没有办法准确识别所谓“价格的发展阶段”，所以使用了条件移动止盈或者更简单的指标止盈，但那是没办法的办法。</p>
 
     </div>
 
@@ -245,7 +265,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%B1%87%E7%BC%96/" rel="tag"># 汇编</a>
+              <a href="/tags/Undefined/" rel="tag"># Undefined</a>
           </div>
 
         
@@ -254,13 +274,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/12/12/8/" rel="prev" title="输出斐波拉契数列前50项">
-      <i class="fa fa-chevron-left"></i> 输出斐波拉契数列前50项
+    <a href="/2024/03/11/27/" rel="prev" title="如何正确使用订单流，如何结合不同技术分析方法——通过正确预期和盘中分析寻找最佳交易区间">
+      <i class="fa fa-chevron-left"></i> 如何正确使用订单流，如何结合不同技术分析方法——通过正确预期和盘中分析寻找最佳交易区间
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/12/12/10/" rel="next" title="对二十个数进行排序">
-      对二十个数进行排序 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
